@@ -19,7 +19,7 @@ public class AparateTest {
                 System.out.println(" myMotosapa : " + myMotosapa);
                 System.out.println(" myMotosapaCopy : " + myMotosapaCopy );
                 System.out.println(" yourMotosapa : " + yourMotosapa);
-                //Te pup, Denis
+
 
 
                 
