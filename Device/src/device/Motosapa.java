@@ -1,11 +1,11 @@
 package device;
 
 public class Motosapa extends Aparat{
-       String tipPornire;
-       String tipAlimentare;
-       int capacitateCilindrica;
-       int putereMotor;
-       int numarViteze;
+      private String tipPornire;
+      private String tipAlimentare;
+      private int capacitateCilindrica;
+      private int putereMotor;
+      private int numarViteze;
 
     public Motosapa() {
     }
