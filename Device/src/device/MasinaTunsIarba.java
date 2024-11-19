@@ -1,11 +1,11 @@
 package device;
 
 public class MasinaTunsIarba extends Aparat {
-    String tipAlimentare;
-    float putereMotor;
-    String tipPornire;
-    int greutate;
-    String culoare;
+   private String tipAlimentare;
+   private float putereMotor;
+   private String tipPornire;
+   private int greutate;
+   private String culoare;
 
     public MasinaTunsIarba() {
     }
