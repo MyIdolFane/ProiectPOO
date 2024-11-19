@@ -1,6 +1,6 @@
 package device;
 
-public class Motosapa {
+public class Motosapa extends Aparat{
        String tipPornire;
        String tipAlimentare;
        int capacitateCilindrica;
