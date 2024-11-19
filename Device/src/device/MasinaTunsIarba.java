@@ -1,6 +1,6 @@
 package device;
 
-public class MasinaTunsIarba {
+public class MasinaTunsIarba extends Aparat {
     String tipAlimentare;
     float putereMotor;
     String tipPornire;
