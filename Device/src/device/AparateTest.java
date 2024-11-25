@@ -47,15 +47,15 @@ public class AparateTest {
                     System.out.println(item);
                 
                 //Teste Sara
-                Drujba drujbaMea= new Drujba();
-                Drujba drujbaVeche=new Drujba(2009, 5.6, "Kamrad", "violet", "motorina");
+                Drujba drujbaMea= new Drujba(); //String brand,String model, float pret, byte garantie, String categorie
+                Drujba drujbaVeche=new Drujba(2009, 5.6, "Kamrad", "violet", "motorina", "Campion", "nou", 200.0f, (byte)3, "aparata de gradinarit");
                 Drujba drujbaNoua=new Drujba(drujbaVeche);
                 System.out.println(drujbaMea);
                 System.out.println(drujbaVeche);
                 System.out.println(drujbaNoua);
         
                 Trimmer  myTrimmer = new Trimmer();
-                Trimmer yourTrimmer = new Trimmer( "Trimmer", 1.7, 280, "electric", false);
+                Trimmer yourTrimmer = new Trimmer( "Trimmer", 1.7, 280, "electric", false, "Fujitsu", "vechi", 299.99f,(byte) 2, "aparat de gradinarit");
                 Trimmer hisTrimmer = new Trimmer(yourTrimmer);
                 System.out.println(myTrimmer);
                 System.out.println(yourTrimmer);
