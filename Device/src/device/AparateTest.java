@@ -57,7 +57,7 @@ public class AparateTest {
                 System.out.println(drujbaNoua);
         
                 Trimmer  myTrimmer = new Trimmer();
-                Trimmer yourTrimmer = new Trimmer( "Trimmer", 1.7, 280, "electric", false, "Fujitsu", "vechi", 299.99f,(byte) 2, "aparat de gradinarit");
+                Trimmer yourTrimmer = new Trimmer( 32, 1.7, 280, "electric", false, "Fujitsu", "vechi", 299.99f,(byte) 2, "aparat de gradinarit");
                 Trimmer hisTrimmer = new Trimmer(yourTrimmer);
                 System.out.println(myTrimmer);
                 System.out.println(yourTrimmer);
@@ -91,7 +91,37 @@ public class AparateTest {
                 for(Drujba i : drujbaList){
                     System.out.println(i);
                 }
-    
+                
+                
+                List<Trimmer> trimmerList =new ArrayList<>();
+                
+                Trimmer trimmer1 = new Trimmer ( 42, 2.0, 280, "electric", true, "Stihl", "FS 55", 299.99f,(byte) 2, "aparat de gradinarit");
+                Trimmer trimmer2 = new Trimmer ( 32, 1.7, 1000, "benzina", false, "Husqvarna", "128R", 349.99f,(byte) 4, "aparat de gradinarit");
+                Trimmer trimmer3 = new Trimmer ( 36, 1, 320, "motorina", false, "Makita", "UR3000", 599.99f,(byte) 3, "aparat de gradinarit");
+                Trimmer trimmer4 = new Trimmer ( 40, 1.3, 500, "benzina", false, "Echo", "SRM-225", 299.99f,(byte) 2, "aparat de gradinarit");
+                Trimmer trimmer5 = new Trimmer ( 39, 3.2, 405, "electric", true, "Honda", " UMS425", 342.99f,(byte) 1, "aparat de gradinarit");
+                Trimmer trimmer6 = new Trimmer ( 45, 2.3, 459, "benzina", false, "Bosch", "GL7033", 449.99f,(byte) 5, "aparat de gradinarit");
+                Trimmer trimmer7 = new Trimmer ( 37, 2.1, 439, "motorina", false, "Ryobi", "ART 30-36 LI", 554.99f,(byte) 3, "aparat de gradinarit");
+                Trimmer trimmer8 = new Trimmer ( 23, 1.9, 640, "electric", true, "Gardena", "RBC30SB", 279.99f,(byte) 4, "aparat de gradinarit");
+                Trimmer trimmer9 = new Trimmer ( 29, 3.5, 499, "benzina", false, "Oleo-Mac", "450", 329.99f,(byte) 5, "aparat de gradinarit");
+                Trimmer trimmer10 = new Trimmer ( 27, 1.6, 180, "motorina", false, "Black+Decker", "Sparta 2500", 300.00f,(byte) 2, "aparat de gradinarit");
+                
+                trimmerList.add(trimmer1);
+                trimmerList.add(trimmer2);
+                trimmerList.add(trimmer3);
+                trimmerList.add(trimmer4);
+                trimmerList.add(trimmer5);
+                trimmerList.add(trimmer6);
+                trimmerList.add(trimmer7);
+                trimmerList.add(trimmer8);
+                trimmerList.add(trimmer9);
+                trimmerList.add(trimmer10);
+                
+               for (Trimmer i : trimmerList)
+                   System.out.println(i);
+                
+                
+                
 	}
 
 }
