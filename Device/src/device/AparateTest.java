@@ -46,6 +46,32 @@ public class AparateTest {
                 for(MasinaTunsIarba item :listaMasiniTunsIarba)
                     System.out.println(item);
                 
+                Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber3 = new Motosapa("sfoara", "benzina", 250, (byte)3.9, (byte)4, "Bertolini ", "451 S", 2999.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber4 = new Motosapa("buton", "motorina", 300, (byte)5, (byte)5, "McCulloch ", "MFT 44", 2593.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber5 = new Motosapa("sfoara", "motorina", 125, (byte)3.2, (byte)2, "Oleo-Mac", "MH 175", 999.9f, (byte)1, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber6 = new Motosapa("buton", "benzina", 225, (byte)4.5, (byte)3, "Grillo ", "G 85", 1239.9f, (byte)2, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte)3.4, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber8 = new Motosapa("sfoara", "motorina", 125, (byte)5, (byte)2, "Kasei ", "KMS 400", 1599.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber9 = new Motosapa("sfoara", "motorina", 225, (byte)4.9, (byte)3, "WOLF-Garten", "A 560", 1499.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber10 = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)3, "Honda", "F220", 1299.9f, (byte)2, "Aparat de gradinarit"); 
+                
+                Set<Motosapa> listaMotosape = new HashSet<>();
+                listaMotosape.add(motosapaProduceNumber1);
+                listaMotosape.add(motosapaProduceNumber2);
+                listaMotosape.add(motosapaProduceNumber3);
+                listaMotosape.add(motosapaProduceNumber4);
+                listaMotosape.add(motosapaProduceNumber5);
+                listaMotosape.add(motosapaProduceNumber6);
+                listaMotosape.add(motosapaProduceNumber7);
+                listaMotosape.add(motosapaProduceNumber8);
+                listaMotosape.add(motosapaProduceNumber9);
+                listaMotosape.add(motosapaProduceNumber10);
+
+                for(Motosapa item: listaMotosape )
+                    System.out.println(item);
+                
                 
                 
                 //Teste Sara
