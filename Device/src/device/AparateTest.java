@@ -11,6 +11,7 @@ public class AparateTest {
                 System.out.println(" Afrisare myMachine : " + myMachine);
                 System.out.println(" Afisare myMachineCopy : " + myMachineCopy );
                 System.out.println(" Afisare hisMachine : " + hisMachine);
+                System.out.println();
                 // motosape 
                 Motosapa myMotosapa = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)4, "Honda", "F560KV", 8533.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa myMotosapaCopy = new Motosapa(myMotosapa);
@@ -19,6 +20,7 @@ public class AparateTest {
                 System.out.println(" Afisare myMotosapa :\n " + myMotosapa);
                 System.out.println(" Afisare myMotosapaCopy :\n " + myMotosapaCopy );
                 System.out.println(" Afisare yourMotosapa :\n " + yourMotosapa);
+                System.out.println();
                 //TEMA 2 DENIS 
                 MasinaTunsIarba grassCutterProduceNumber1 = new MasinaTunsIarba("benzina",3.4f,"sfoara", (byte)41, "red", "Grunman" , "ASMR3", 1749.90f, (byte)4, "Aparat de gradinarit"  );
                 MasinaTunsIarba grassCutterProduceNumber2 = new MasinaTunsIarba("motorina",3.5f,"sfoara", (byte)56, "green", "Honda" , "LMO", 899.99f, (byte)2, "Aparat de gradinarit"  );
@@ -31,7 +33,7 @@ public class AparateTest {
                 MasinaTunsIarba grassCutterProduceNumber9 = new MasinaTunsIarba("benzina",3.9f,"sfoara", (byte)40, "red", "IHunt" , "E148C", 1899.90f, (byte)3, "Aparat de gradinarit"  );
                 MasinaTunsIarba grassCutterProduceNumber10 = new MasinaTunsIarba("curent electric",3.2f,"buton", (byte)40, "black", "Hyundai" , "HY-LM4601 GT", 1478.00f, (byte)3, "Aparat de gradinarit"  );
                 
-                System.out.println("Vectorul de masini de tuns iarba este : ");
+                //System.out.println("Vectorul de masini de tuns iarba este : ");
                 Set<MasinaTunsIarba> listaMasiniTunsIarba = new HashSet<>();
                 listaMasiniTunsIarba.add(grassCutterProduceNumber1); 
                 listaMasiniTunsIarba.add(grassCutterProduceNumber2);
@@ -43,8 +45,8 @@ public class AparateTest {
                 listaMasiniTunsIarba.add(grassCutterProduceNumber8);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber9);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber10);
-                for(MasinaTunsIarba item :listaMasiniTunsIarba)
-                    System.out.println(item);
+                /*for(MasinaTunsIarba item :listaMasiniTunsIarba)
+                    System.out.println(item);*/
                 
                 Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
@@ -52,7 +54,7 @@ public class AparateTest {
                 Motosapa motosapaProduceNumber4 = new Motosapa("buton", "motorina", 300, (byte)5, (byte)5, "McCulloch ", "MFT 44", 2593.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber5 = new Motosapa("sfoara", "motorina", 125, (byte)3.2, (byte)2, "Oleo-Mac", "MH 175", 999.9f, (byte)1, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber6 = new Motosapa("buton", "benzina", 225, (byte)4.5, (byte)3, "Grillo ", "G 85", 1239.9f, (byte)2, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte)3.4, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte) 4.9, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber8 = new Motosapa("sfoara", "motorina", 125, (byte)5, (byte)2, "Kasei ", "KMS 400", 1599.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber9 = new Motosapa("sfoara", "motorina", 225, (byte)4.9, (byte)3, "WOLF-Garten", "A 560", 1499.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber10 = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)3, "Honda", "F220", 1299.9f, (byte)2, "Aparat de gradinarit"); 
@@ -69,8 +71,25 @@ public class AparateTest {
                 listaMotosape.add(motosapaProduceNumber9);
                 listaMotosape.add(motosapaProduceNumber10);
 
+                /*for(Motosapa item: listaMotosape )
+                    System.out.println(item);*/
+                
+                
+                //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
+                for(MasinaTunsIarba item :listaMasiniTunsIarba)
+                    if(item.getTipAlimentare().equals("benzina") && item.getPret()<2000f)
+                         System.out.println(item);
+                System.out.println();
+                // conditii afisare motosape dupa puterea motorului si capacitatea cilindrica 
                 for(Motosapa item: listaMotosape )
-                    System.out.println(item);
+                    if(item.getCapacitateCilindrica()>=250 && item.getPutereMotor()>=4.0f)
+                         System.out.println(item);
+                System.out.println();
+                
+                
+                
+                
+                
                 
                 
                 
@@ -114,9 +133,9 @@ public class AparateTest {
                 drujbaList.add(numarul9);
                 drujbaList.add(numarul10);
                 
-                for(Drujba i : drujbaList){
+                /*for(Drujba i : drujbaList){
                     System.out.println(i);
-                }
+                }*/
                 
                 
                 List<Trimmer> trimmerList =new ArrayList<>();
@@ -143,8 +162,8 @@ public class AparateTest {
                 trimmerList.add(trimmer9);
                 trimmerList.add(trimmer10);
                 
-               for (Trimmer i : trimmerList)
-                   System.out.println(i);
+               /*for (Trimmer i : trimmerList)
+                   System.out.println(i);*/
                 
                 
                 
