@@ -74,7 +74,7 @@ public Trimmer(Trimmer altObiect){
         this.tipMotor = tipMotor;
     }
 
-    public boolean isAcumulator() {
+    public boolean getAcumulator() {
         return acumulator;
     }
 
