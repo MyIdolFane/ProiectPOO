@@ -57,7 +57,9 @@ public class Aparat {
     public String getCategorie() {
     	return categorie;
     }
+   
     public String toString() { 
     	return "Aparat{" + "brand='" + brand + '\'' + ", model='" + model + '\'' + ", pret=" + pret + ", garantie=" + garantie +", categorie='" + categorie + '\'';
     }
+
 }

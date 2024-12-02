@@ -32,6 +32,36 @@
 	        this.areSac = areSac;
 	    	this.capacitateSac = capacitateSac;
 	    } 
+	    public void setPutereAspirare(byte putereAspirare) {
+	        this.putereAspirare = putereAspirare;
+	    }
+	    public byte getPutereAspirare() {
+	        return putereAspirare;
+	    }
+	    public void setCapacitateRezervor(float capacitateRezervor) {
+	        this.capacitateRezervor = capacitateRezervor;
+	    } 
+	    public float getCapacitateRezervor() {
+	        return capacitateRezervor;
+	    }
+	    public void setAreFiltruHEPA(boolean areFiltruHEPA) {
+	        this.areFiltruHEPA = areFiltruHEPA;
+	    }
+	    public boolean isAreFiltruHEPA() {
+	        return areFiltruHEPA;
+	    }
+	    public void setAreSac(boolean areSac) {
+	        this.areSac = areSac;
+	    }
+	    public boolean isAreSac() {
+	        return areSac;
+	    }
+	    public void setCapacitateSac(float capacitateSac) {
+	        this.capacitateSac = capacitateSac;
+	    }
+	    public float getCapacitateSac() {
+	        return capacitateSac;
+	    }
 	    public String toString() {
 	        return "Aspirator{" +
 	                super.toString() +
@@ -41,4 +71,6 @@
 	                ", areSac=" + areSac + "capacitateSac=" + capacitateSac +
 	                '}'; 
 	}
+	    
+	    
 	}

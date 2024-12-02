@@ -27,6 +27,30 @@ public class AspiratorUmed extends AspiratorUscat{
 	        this.functieSpalare = other.functieSpalare;
 	        this.capacitateApa = other.capacitateApa;
 	    }
+	    public void setSuportaLichide(boolean suportaLichide) {
+	    	this.suportaLichide = suportaLichide;
+	    }
+	    public boolean getSuportaLichide() {
+	    	return suportaLichide;
+	    }
+	    public void setAreFunctieUscare(boolean areFunctieUscare) {
+	    	this.areFunctieUscare = areFunctieUscare;
+	    }
+	    public boolean getAreFunctieUscare() {
+	    	return areFunctieUscare;
+	    }
+	    public void setFunctieSpalare(boolean functieSpalare) {
+	    	this.functieSpalare= functieSpalare;
+	    }
+	public boolean getFunctieSpalare() {
+		return false;
+	}
+	public void setCapacitateApa(int capacitateApa) {
+    	this.capacitateApa = capacitateApa;
+    }
+	public int getCapacitateApa() {
+		return 0;
+	}
 	 public String toString() {
 	        return "AspiratorUmed{" +
 	                super.toString() +
@@ -35,11 +59,4 @@ public class AspiratorUmed extends AspiratorUscat{
 	                ", functieSpalare=" + functieSpalare + ", capacitateApa=" + capacitateApa +
 	                '}';
 	    }
-	public boolean getFunctieSpalare() {
-		return false;
-	}
-	public int getCapacitateApa() {
-		return 0;
-	}
-
 }
