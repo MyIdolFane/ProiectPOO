@@ -57,7 +57,7 @@ public class AparateTest {
                 Motosapa motosapaProduceNumber9 = new Motosapa("sfoara", "motorina", 225, (byte)4.9, (byte)3, "WOLF-Garten", "A 560", 1499.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber10 = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)3, "Honda", "F220", 1299.9f, (byte)2, "Aparat de gradinarit"); 
                 
-                Set<Motosapa> listaMotosape = new HashSet<>();
+                ArrayList<Motosapa> listaMotosape = new ArrayList<>();
                 listaMotosape.add(motosapaProduceNumber1);
                 listaMotosape.add(motosapaProduceNumber2);
                 listaMotosape.add(motosapaProduceNumber3);
@@ -69,6 +69,10 @@ public class AparateTest {
                 listaMotosape.add(motosapaProduceNumber9);
                 listaMotosape.add(motosapaProduceNumber10);
 
+                for (int i =0; i<listaMotosape.size();i=i+3)
+                    System.out.println(listaMotosape.get(i));
+                
+                
                 for(Motosapa item: listaMotosape )
                     System.out.println(item);
                 
@@ -96,7 +100,7 @@ public class AparateTest {
                 Drujba numarul3 = new Drujba (2006, 1.8, "Husqvarna 120 Mark II","verde", "motorina","Husqvarna","noua", 2392f, (byte) 1, "aparat de taiat lemne" );
                 Drujba numarul4 = new Drujba(2007, 2.4, "Makita EA6100P53E ", "galben", "electrică ", "Makita", "noua", 1790f, (byte) 4, "aparat de taiat lemne" );
                 Drujba numarul5 = new Drujba(2008, 2.5, "Echo CS-590 Timber Wolf", "rosu", "pe baterie ", "Echo", "noua", 1990f, (byte) 5, "aparat de taiat lemne" );
-                Drujba numarul6 = new Drujba(2009, 2.6, "Jonsered CS 2245 ", "portocaliu", "hidraulică", "Jonsered", "noua", 2590f, (byte) 6, "aparat de taiat lemne" );
+                Drujba numarul6 = new Drujba(numarul2);
                 Drujba numarul7 = new Drujba(2010, 3.3, "Oleo-Mac GS 451 ", "gri", "pneumatică", "Oleo-Mac", "noua", 1289f, (byte) 1, "aparat de taiat lemne" );
                 Drujba numarul8 = new Drujba(2011, 3.0, "McCulloch CS 450 Elite ", "violet", "bioetanol", "McCulloch", "noua", 2372f, (byte) 3, "aparat de taiat lemne" );
                 Drujba numarul9 = new Drujba(2012, 3.5, "Ryobi RCS5145B ", "mov", "Combustibil sintetic", "Ryobi", "noua", 3278f, (byte) 4, "aparat de taiat lemne" );
@@ -114,8 +118,12 @@ public class AparateTest {
                 drujbaList.add(numarul9);
                 drujbaList.add(numarul10);
                 
-                for(Drujba i : drujbaList){
+               for(Drujba i : drujbaList){
                     System.out.println(i);
+                }
+                for (Drujba i : drujbaList){
+                   if(i.getAnFabricatie()>=2011 && i.getPutere()>3)
+                     System.out.println(i);
                 }
                 
                 
@@ -145,9 +153,15 @@ public class AparateTest {
                 
                for (Trimmer i : trimmerList)
                    System.out.println(i);
-                
-                
-                
+               for (Trimmer i : trimmerList){
+                   if(i.getDiametruDeTaiere()>=40 && i.getGreutate()<=2.0)
+                       System.out.println(i);
+                       }
 	}
-
 }
+/*
+for (Drujba i : drujbaList){
+         if(i.getModelDrujba().equals("un model") && i.getCuloare().equals("albastru"))
+         System.out.println(i);
+           }
+*/
