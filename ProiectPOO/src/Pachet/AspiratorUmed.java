@@ -35,5 +35,11 @@ public class AspiratorUmed extends AspiratorUscat{
 	                ", functieSpalare=" + functieSpalare + ", capacitateApa=" + capacitateApa +
 	                '}';
 	    }
+	public boolean getFunctieSpalare() {
+		return false;
+	}
+	public int getCapacitateApa() {
+		return 0;
+	}
 
 }
