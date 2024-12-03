@@ -1,21 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package device;
 
-/**
- *
- * @author denia
- */
 public class Aparat {
-    private String brand;
-    private String model;
+	private String brand, model, categorie;
     private float pret;
     private byte garantie; 
-    private String categorie;
     
-    public Aparat() {
+    public Aparat() { 
         this.brand = "Necunoscut";
         this.model = "Necunoscut";
         this.pret = 0.0f;
@@ -37,49 +27,39 @@ public class Aparat {
     	this.garantie = other.garantie;
     	this.categorie = other.categorie;
     }
-
-    public String getBrand() {
-        return brand;
-    }
-
     public void setBrand(String brand) {
-        this.brand = brand;
+    	this.brand = brand;	
     }
-
-    public String getModel() {
-        return model;
+    public String getBrand() {
+    	return brand;
     }
-
     public void setModel(String model) {
-        this.model = model;
+    	this.model = model;
     }
-
-    public float getPret() {
-        return pret;
+    public String getModel() {
+    	return model;
     }
-
     public void setPret(float pret) {
-        this.pret = pret;
+    	this.pret = pret;
     }
-
-    public byte getGarantie() {
-        return garantie;
+    public float getPret() {
+    	return pret;
     }
-
     public void setGarantie(byte garantie) {
-        this.garantie = garantie;
+    	this.garantie = garantie;
     }
-
-    public String getCategorie() {
-        return categorie;
+    public byte getGarantie() {
+    	return garantie;
     }
-
     public void setCategorie(String categorie) {
-        this.categorie = categorie;
+    	this.categorie = categorie;
     }
-    
-    @Override
-    public String toString() {
+    public String getCategorie() {
+    	return categorie;
+    }
+   
+    public String toString() { 
     	return "Aparat{" + "brand='" + brand + '\'' + ", model='" + model + '\'' + ", pret=" + pret + ", garantie=" + garantie +", categorie='" + categorie + '\'';
     }
+
 }
