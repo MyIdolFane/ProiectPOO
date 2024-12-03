@@ -1,7 +1,6 @@
 package device;
 import java.util.*;
 public class AparateTest {
-
 	public static void main(String[] args) {
 		//Masini de tuns iarba 
                 MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
@@ -77,6 +76,18 @@ public class AparateTest {
                     System.out.println(item);
                 
                 
+                 //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
+                for(MasinaTunsIarba item :listaMasiniTunsIarba)
+                    if(item.getTipAlimentare().equals("benzina" )|| item.getPutereMotor()==4f)
+                         System.out.println(item);
+                System.out.println();
+                // conditii afisare motosape dupa puterea motorului si capacitatea cilindrica 
+                for(Motosapa item: listaMotosape )
+                    if(item.getCapacitateCilindrica()>=250 && item.getPutereMotor()>=4.0f)
+                         System.out.println(item);
+                System.out.println();
+                
+                
                 
                 //Teste Sara
                 Drujba drujbaMea= new Drujba(); //String brand,String model, float pret, byte garantie, String categorie
@@ -121,9 +132,9 @@ public class AparateTest {
                for(Drujba i : drujbaList){
                     System.out.println(i);
                 }
-                for (Drujba i : drujbaList){
-                   if(i.getAnFabricatie()>=2011 && i.getPutere()>3)
-                     System.out.println(i);
+                for(Drujba i:drujbaList){
+                    if(i.getPutere()<4 && i.getCuloare().equals("negru"))
+                        System.out.println(i);
                 }
                 
                 
@@ -159,6 +170,18 @@ public class AparateTest {
                        }
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 for (Drujba i : drujbaList){
          if(i.getModelDrujba().equals("un model") && i.getCuloare().equals("albastru"))

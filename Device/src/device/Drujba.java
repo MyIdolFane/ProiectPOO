@@ -14,6 +14,7 @@ public class Drujba  extends Aparat implements Comportament{
 	private String modelDrujba;
 	private String culoare;
 	private String tipAlimentare;
+        
 
 	public Drujba() {   //constructor fara parametrii
             super();
