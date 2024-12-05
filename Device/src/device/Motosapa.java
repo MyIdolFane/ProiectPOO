@@ -72,7 +72,7 @@ public class Motosapa extends Aparat implements Comportament {
     
     @Override
     public String toString() {
-        return "Motosapa{" + "tipPornire=" + tipPornire + ", tipAlimentare=" + tipAlimentare + ", capacitateCilindrica=" + capacitateCilindrica + ", putereMotor=" + putereMotor + ", numarViteze=" + numarViteze + '}';
+        return "Motosapa : \n" + "tipPornire = " + tipPornire + "; tipAlimentare = " + tipAlimentare + "; capacitateCilindrica = " + capacitateCilindrica + "; putereMotor = " + putereMotor + "; numarViteze = " +" ; " + numarViteze + super.toString();
     }
 
     @Override

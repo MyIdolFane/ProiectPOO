@@ -1,6 +1,7 @@
 package device;
 import java.util.*;
 public class AparateTest {
+
 	public static void main(String[] args) {
 		//Masini de tuns iarba 
                 MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
@@ -30,7 +31,7 @@ public class AparateTest {
                 MasinaTunsIarba grassCutterProduceNumber9 = new MasinaTunsIarba("benzina",3.9f,"sfoara", (byte)40, "red", "IHunt" , "E148C", 1899.90f, (byte)3, "Aparat de gradinarit"  );
                 MasinaTunsIarba grassCutterProduceNumber10 = new MasinaTunsIarba("curent electric",3.2f,"buton", (byte)40, "black", "Hyundai" , "HY-LM4601 GT", 1478.00f, (byte)3, "Aparat de gradinarit"  );
                 
-                System.out.println("Vectorul de masini de tuns iarba este : ");
+                //System.out.println("Vectorul de masini de tuns iarba este : ");
                 Set<MasinaTunsIarba> listaMasiniTunsIarba = new HashSet<>();
                 listaMasiniTunsIarba.add(grassCutterProduceNumber1); 
                 listaMasiniTunsIarba.add(grassCutterProduceNumber2);
@@ -42,8 +43,8 @@ public class AparateTest {
                 listaMasiniTunsIarba.add(grassCutterProduceNumber8);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber9);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber10);
-                for(MasinaTunsIarba item :listaMasiniTunsIarba)
-                    System.out.println(item);
+                /*for(MasinaTunsIarba item :listaMasiniTunsIarba)
+                    System.out.println(item);*/
                 
                 Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
@@ -51,7 +52,7 @@ public class AparateTest {
                 Motosapa motosapaProduceNumber4 = new Motosapa("buton", "motorina", 300, (byte)5, (byte)5, "McCulloch ", "MFT 44", 2593.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber5 = new Motosapa("sfoara", "motorina", 125, (byte)3.2, (byte)2, "Oleo-Mac", "MH 175", 999.9f, (byte)1, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber6 = new Motosapa("buton", "benzina", 225, (byte)4.5, (byte)3, "Grillo ", "G 85", 1239.9f, (byte)2, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte)3.4, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte) 4.9, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber8 = new Motosapa("sfoara", "motorina", 125, (byte)5, (byte)2, "Kasei ", "KMS 400", 1599.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber9 = new Motosapa("sfoara", "motorina", 225, (byte)4.9, (byte)3, "WOLF-Garten", "A 560", 1499.9f, (byte)3, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber10 = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)3, "Honda", "F220", 1299.9f, (byte)2, "Aparat de gradinarit"); 
@@ -68,17 +69,13 @@ public class AparateTest {
                 listaMotosape.add(motosapaProduceNumber9);
                 listaMotosape.add(motosapaProduceNumber10);
 
-                for (int i =0; i<listaMotosape.size();i=i+3)
-                    System.out.println(listaMotosape.get(i));
+                /*for(Motosapa item: listaMotosape )
+                    System.out.println(item);*/
                 
                 
-                for(Motosapa item: listaMotosape )
-                    System.out.println(item);
-                
-                
-                 //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
+                //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
                 for(MasinaTunsIarba item :listaMasiniTunsIarba)
-                    if(item.getTipAlimentare().equals("benzina" )|| item.getPutereMotor()==4f)
+                    if(item.getTipAlimentare().equals("benzina") && item.getPret()<2000f)
                          System.out.println(item);
                 System.out.println();
                 // conditii afisare motosape dupa puterea motorului si capacitatea cilindrica 
@@ -86,6 +83,11 @@ public class AparateTest {
                     if(item.getCapacitateCilindrica()>=250 && item.getPutereMotor()>=4.0f)
                          System.out.println(item);
                 System.out.println();
+                
+                
+                
+                
+                
                 
                 
                 
@@ -111,7 +113,7 @@ public class AparateTest {
                 Drujba numarul3 = new Drujba (2006, 1.8, "Husqvarna 120 Mark II","verde", "motorina","Husqvarna","noua", 2392f, (byte) 1, "aparat de taiat lemne" );
                 Drujba numarul4 = new Drujba(2007, 2.4, "Makita EA6100P53E ", "galben", "electrică ", "Makita", "noua", 1790f, (byte) 4, "aparat de taiat lemne" );
                 Drujba numarul5 = new Drujba(2008, 2.5, "Echo CS-590 Timber Wolf", "rosu", "pe baterie ", "Echo", "noua", 1990f, (byte) 5, "aparat de taiat lemne" );
-                Drujba numarul6 = new Drujba(numarul2);
+                Drujba numarul6 = new Drujba(2009, 2.6, "Jonsered CS 2245 ", "portocaliu", "hidraulică", "Jonsered", "noua", 2590f, (byte) 6, "aparat de taiat lemne" );
                 Drujba numarul7 = new Drujba(2010, 3.3, "Oleo-Mac GS 451 ", "gri", "pneumatică", "Oleo-Mac", "noua", 1289f, (byte) 1, "aparat de taiat lemne" );
                 Drujba numarul8 = new Drujba(2011, 3.0, "McCulloch CS 450 Elite ", "violet", "bioetanol", "McCulloch", "noua", 2372f, (byte) 3, "aparat de taiat lemne" );
                 Drujba numarul9 = new Drujba(2012, 3.5, "Ryobi RCS5145B ", "mov", "Combustibil sintetic", "Ryobi", "noua", 3278f, (byte) 4, "aparat de taiat lemne" );
@@ -129,13 +131,9 @@ public class AparateTest {
                 drujbaList.add(numarul9);
                 drujbaList.add(numarul10);
                 
-               for(Drujba i : drujbaList){
+                /*for(Drujba i : drujbaList){
                     System.out.println(i);
-                }
-                for(Drujba i:drujbaList){
-                    if(i.getPutere()<4 && i.getCuloare().equals("negru"))
-                        System.out.println(i);
-                }
+                }*/
                 
                 
                 List<Trimmer> trimmerList =new ArrayList<>();
