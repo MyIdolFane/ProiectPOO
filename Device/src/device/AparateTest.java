@@ -7,18 +7,18 @@ public class AparateTest {
                 MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
 		MasinaTunsIarba myMachineCopy = new MasinaTunsIarba(myMachine);
 		MasinaTunsIarba hisMachine = new MasinaTunsIarba();
-                System.out.println("Afisare masini de tuns iarba : ");
-                System.out.println(" Afrisare myMachine : " + myMachine);
-                System.out.println(" Afisare myMachineCopy : " + myMachineCopy );
-                System.out.println(" Afisare hisMachine : " + hisMachine);
+                //System.out.println("Afisare masini de tuns iarba : ");
+                //System.out.println(" Afrisare myMachine : " + myMachine);
+                //System.out.println(" Afisare myMachineCopy : " + myMachineCopy );
+                //System.out.println(" Afisare hisMachine : " + hisMachine);
                 // motosape 
                 Motosapa myMotosapa = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)4, "Honda", "F560KV", 8533.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa myMotosapaCopy = new Motosapa(myMotosapa);
                 Motosapa yourMotosapa = new Motosapa();
-                System.out.println("Afisare motosape : ");
-                System.out.println(" Afisare myMotosapa :\n " + myMotosapa);
-                System.out.println(" Afisare myMotosapaCopy :\n " + myMotosapaCopy );
-                System.out.println(" Afisare yourMotosapa :\n " + yourMotosapa);
+               //System.out.println("Afisare motosape : ");
+                //System.out.println(" Afisare myMotosapa :\n " + myMotosapa);
+                //System.out.println(" Afisare myMotosapaCopy :\n " + myMotosapaCopy );
+                //System.out.println(" Afisare yourMotosapa :\n " + yourMotosapa);
                 //TEMA 2 DENIS 
                 MasinaTunsIarba grassCutterProduceNumber1 = new MasinaTunsIarba("benzina",3.4f,"sfoara", (byte)41, "red", "Grunman" , "ASMR3", 1749.90f, (byte)4, "Aparat de gradinarit"  );
                 MasinaTunsIarba grassCutterProduceNumber2 = new MasinaTunsIarba("motorina",3.5f,"sfoara", (byte)56, "green", "Honda" , "LMO", 899.99f, (byte)2, "Aparat de gradinarit"  );
@@ -134,7 +134,10 @@ public class AparateTest {
                 /*for(Drujba i : drujbaList){
                     System.out.println(i);
                 }*/
-                
+                for (Drujba i : drujbaList){
+                    if(i.getModelDrujba().equals("un model") && i.getCuloare().equals("albastru"))
+                            System.out.println(i);
+           }
                 
                 List<Trimmer> trimmerList =new ArrayList<>();
                 
@@ -160,8 +163,8 @@ public class AparateTest {
                 trimmerList.add(trimmer9);
                 trimmerList.add(trimmer10);
                 
-               for (Trimmer i : trimmerList)
-                   System.out.println(i);
+              // for (Trimmer i : trimmerList)
+                //   System.out.println(i);
                for (Trimmer i : trimmerList){
                    if(i.getDiametruDeTaiere()>=40 && i.getGreutate()<=2.0)
                        System.out.println(i);
