@@ -1,4 +1,4 @@
-package device;
+package Pachet;
 
 public class Aparat {
 	private String brand, model, categorie;

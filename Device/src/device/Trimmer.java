@@ -9,7 +9,7 @@ package device;
  * @author Sara
  */
 public class Trimmer extends Aparat implements Comportament{
-    private String brend;
+    private int diametruDeTaiere;
     private double greutate;
     private int putere;
     private String tipMotor;
@@ -17,16 +17,16 @@ public class Trimmer extends Aparat implements Comportament{
     
 public Trimmer(){
         super();
-        brend="Bosch";
+        diametruDeTaiere=0;
         greutate=0.0;
         putere=0;
         tipMotor="electric";
         acumulator=false;
 }
 
-public Trimmer(String brend, double greutate, int putere, String tipMotor, boolean acumulator, String brand,String model, float pret, byte garantie, String categorie){
+public Trimmer(int diametruDeTaiere, double greutate, int putere, String tipMotor, boolean acumulator, String brand,String model, float pret, byte garantie, String categorie){
         super(brand,model, pret, garantie, categorie);
-        this.brend=brend;
+        this.diametruDeTaiere=diametruDeTaiere;
         this.greutate=greutate;
         this.putere=putere;
         this.tipMotor=tipMotor;
@@ -35,19 +35,19 @@ public Trimmer(String brend, double greutate, int putere, String tipMotor, boole
 
 public Trimmer(Trimmer altObiect){
         super(altObiect);
-        this.brend=altObiect.brend;
+        this.diametruDeTaiere=altObiect.diametruDeTaiere;
         this.greutate=altObiect.greutate;
         this.putere=altObiect.putere;
         this.tipMotor=altObiect.tipMotor;
         this.acumulator=altObiect.acumulator;
     }
 
-    public String getBrend() {
-        return brend;
+    public int getDiametruDeTaiere() {
+        return diametruDeTaiere;
     }
 
-    public void setBrend(String brend) {
-        this.brend = brend;
+    public void setDiametruDeTaiere(int diametruDeTaiere) {
+        this.diametruDeTaiere = diametruDeTaiere;
     }
 
     public double getGreutate() {
@@ -74,7 +74,7 @@ public Trimmer(Trimmer altObiect){
         this.tipMotor = tipMotor;
     }
 
-    public boolean isAcumulator() {
+    public boolean getAcumulator() {
         return acumulator;
     }
 
@@ -82,11 +82,13 @@ public Trimmer(Trimmer altObiect){
         this.acumulator = acumulator;
     }
 
-
     @Override
-    public String toString(){
-        return " brend "+brend+" greutate "+greutate+" putere "+putere+ " tipMotor "+tipMotor +" acumulator "+ acumulator;
+    public String toString() {
+        return "Trimmer{" + "diametruDeTaiere=" + diametruDeTaiere + ", greutate=" + greutate + ", putere=" + putere + ", tipMotor=" + tipMotor + ", acumulator=" + acumulator + '}';
     }
+
+
+    
 
     @Override
     public void estePornit() {

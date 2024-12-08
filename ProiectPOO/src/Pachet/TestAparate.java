@@ -1,7 +1,8 @@
-package device;
+package Pachet;
 
 import java.util.ArrayList;
-public class TestAparat {
+
+public class TestAparate {
     public static void main(String[] args) {
        
         Aparat aparat1 = new Aparat();
@@ -90,3 +91,4 @@ public class TestAparat {
 
             }
         }
+

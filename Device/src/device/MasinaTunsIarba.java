@@ -74,7 +74,7 @@ public class MasinaTunsIarba extends Aparat implements Comportament {
         super.toString();
         return " Masina de tuns iarba : \n" + "Tip alimentare = " + tipAlimentare + " ; " 
                 + "Putere motor = " + putereMotor + " ; " + "Tip pornire = " + tipPornire + " ; " + "Latime taiere = " + latimeTaiere + " ; " 
-                +  "Culoare = " + culoare + " ; ";
+                +  "Culoare = " + culoare + " ; " + super.toString();
     }
 
     @Override

@@ -1,3 +1,4 @@
+
 package device;
 
 public class AspiratorUscat extends Aparat {
