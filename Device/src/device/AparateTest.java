@@ -1,9 +1,10 @@
 package device;
 import java.util.*;
+import javax.swing.JFrame;
 public class AparateTest {
 
 	public static void main(String[] args) {
-		//Masini de tuns iarba 
+		/*//Masini de tuns iarba 
                 MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
 		MasinaTunsIarba myMachineCopy = new MasinaTunsIarba(myMachine);
 		MasinaTunsIarba hisMachine = new MasinaTunsIarba();
@@ -44,7 +45,7 @@ public class AparateTest {
                 listaMasiniTunsIarba.add(grassCutterProduceNumber9);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber10);
                 /*for(MasinaTunsIarba item :listaMasiniTunsIarba)
-                    System.out.println(item);*/
+                    System.out.println(item);
                 
                 Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
@@ -70,7 +71,7 @@ public class AparateTest {
                 listaMotosape.add(motosapaProduceNumber10);
 
                 /*for(Motosapa item: listaMotosape )
-                    System.out.println(item);*/
+                    System.out.println(item);
                 
                 
                 //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
@@ -133,7 +134,7 @@ public class AparateTest {
                 
                 /*for(Drujba i : drujbaList){
                     System.out.println(i);
-                }*/
+                }
                 for (Drujba i : drujbaList){
                     if(i.getModelDrujba().equals("un model") && i.getCuloare().equals("albastru"))
                             System.out.println(i);
@@ -169,6 +170,84 @@ public class AparateTest {
                    if(i.getDiametruDeTaiere()>=40 && i.getGreutate()<=2.0)
                        System.out.println(i);
                        }
+               
+
+                //Adi
+                  Aparat aparat1 = new Aparat();
+        Aparat aparat2 = new Aparat("Aspirator", "Samsung", 1200, 3.5, "30x20x15", "Electric", true, 24, 399.99f, "Plastic");
+        Aparat aparat3 = new Aparat(aparat2);
+
+        System.out.println("Instanțe Aparat:");
+        System.out.println(aparat1);
+        System.out.println(aparat2);
+        System.out.println(aparat3);
+        System.out.println();
+
+        AparatCuratatPardoseli pardoseli1 = new AparatCuratatPardoseli();
+        AparatCuratatPardoseli pardoseli2 = new AparatCuratatPardoseli("Mop Electric", "Philips", 1500, 4.2, "40x25x20", "Electric", true, 12, 599.99f, "Metal", true, 2, "Perii rotative");
+        AparatCuratatPardoseli pardoseli3 = new AparatCuratatPardoseli(pardoseli2);
+
+        System.out.println("Instanțe AparatCuratatPardoseli:");
+        System.out.println(pardoseli1);
+        System.out.println(pardoseli2);
+        System.out.println(pardoseli3);
+        System.out.println();
+
+        AparatCuratatGeamuri geamuri1 = new AparatCuratatGeamuri();
+        AparatCuratatGeamuri geamuri2 = new AparatCuratatGeamuri("Aparat geamuri", "Kärcher", 800, 2.8, "20x15x10", "Electric", true, 18, 249.99f, "Plastic", 30.5, true, "Universal");
+        AparatCuratatGeamuri geamuri3 = new AparatCuratatGeamuri(geamuri2);
+
+        System.out.println("Instanțe AparatCuratatGeamuri:");
+        System.out.println(geamuri1);
+        System.out.println(geamuri2);
+        System.out.println(geamuri3);
+        System.out.println();
+
+       
+        ArrayList<Aparat> listaAparate = new ArrayList<>();
+        ArrayList<AparatCuratatPardoseli> listaPardoseli = new ArrayList<>();
+        ArrayList<AparatCuratatGeamuri> listaGeamuri = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            listaAparate.add(new Aparat("Aparat " + i, "Marca " + i, 1000 + i, 3.0 + i, "30x20x15", "Electric", true, 24, 300.0f + i, "Plastic"));
+            listaPardoseli.add(new AparatCuratatPardoseli("Pardoseli " + i, "Marca " + i, 1500 + i, 5.0 + i, "40x25x20", "Electric", true, 12, 600.0f + i, "Metal", true, 2 + i, "Perii rotative"));
+            listaGeamuri.add(new AparatCuratatGeamuri("Geamuri " + i, "Marca " + i, 800 + i, 2.5 + i, "20x15x10", "Electric", true, 18, 250.0f + i, "Plastic", 30.0 + i, true, "Detergent " + i));
+        }
+
+       
+        System.out.println("Vector Aparate (filtrate):");
+        for (Aparat a : listaAparate) {
+            if (a.getPutereAparat() > 3.0 && a.getPret() < 500.0f) {
+                System.out.println(a);
+            }
+        }
+        System.out.println();
+
+      
+        System.out.println("Vector AparatCuratatPardoseli (filtrate):");
+        for (AparatCuratatPardoseli p : listaPardoseli) {
+            if (p.getPutereAparat() > 1.0 && p.getPutereAparat() < 3.0 && p.getPret() > 100 && p.getPret() < 200) {
+                System.out.println(p);
+            }
+        }
+
+        System.out.println();
+
+       
+        System.out.println("Vector AparatCuratatGeamuri (filtrate):");
+        for (AparatCuratatGeamuri g : listaGeamuri) {
+            if (g.getPutereAparat() > 3.0 && g.getPret() < 500.0f) {
+                System.out.println(g);
+            }
+        }*/
+              
+                
+                JFrame frame = new JFrame();
+                
+                
+                
+                frame.setVisible(true);
+                
 	}
 }
 
