@@ -1,13 +1,12 @@
 package device;
 import java.util.*;
-import javax.swing.JFrame;
 public class AparateTest {
 
 	public static void main(String[] args) {
-		/*//Masini de tuns iarba 
-                MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
-		MasinaTunsIarba myMachineCopy = new MasinaTunsIarba(myMachine);
-		MasinaTunsIarba hisMachine = new MasinaTunsIarba();
+		//Masini de tuns iarba 
+                //MasinaTunsIarba myMachine = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)12, "rosie", "Grunman" , "ASMR3", 345.9f, (byte)3, "Aparat de gradinarit"  );
+		//MasinaTunsIarba myMachineCopy = new MasinaTunsIarba(myMachine);
+		//MasinaTunsIarba hisMachine = new MasinaTunsIarba();
                 //System.out.println("Afisare masini de tuns iarba : ");
                 //System.out.println(" Afrisare myMachine : " + myMachine);
                 //System.out.println(" Afisare myMachineCopy : " + myMachineCopy );
@@ -21,16 +20,16 @@ public class AparateTest {
                 //System.out.println(" Afisare myMotosapaCopy :\n " + myMotosapaCopy );
                 //System.out.println(" Afisare yourMotosapa :\n " + yourMotosapa);
                 //TEMA 2 DENIS 
-                MasinaTunsIarba grassCutterProduceNumber1 = new MasinaTunsIarba("benzina",3.4f,"sfoara", (byte)41, "red", "Grunman" , "ASMR3", 1749.90f, (byte)4, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber2 = new MasinaTunsIarba("motorina",3.5f,"sfoara", (byte)56, "green", "Honda" , "LMO", 899.99f, (byte)2, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber3 = new MasinaTunsIarba("benzina",4.2f,"sfoara", (byte)60, "yellow", "Wolfson" , "Stanley", 792.96f, (byte)2, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber4 = new MasinaTunsIarba("curent electric",3.0f,"buton", (byte)45, "rosie", "Bosch" , "ARM 3400", 649.90f, (byte)2, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber5 = new MasinaTunsIarba("motorina",4.5f,"buton", (byte)50, "blue", "Karcher" , "", 2999.99f, (byte)5, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber6 = new MasinaTunsIarba("benzina",3.4f,"buton", (byte)52, "black", "Dewalt" , "T400I", 3164.73f, (byte)4, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber7 = new MasinaTunsIarba("curent electric",2.8f,"buton", (byte)38, "yellow", "Riobi" , "R46", 2195.00f, (byte)3, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber8 = new MasinaTunsIarba("motorina",5f,"sfoara", (byte)65, "green", "Samsung" , "ProGarden S421-T6", 1855.99f, (byte)2, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber9 = new MasinaTunsIarba("benzina",3.9f,"sfoara", (byte)40, "red", "IHunt" , "E148C", 1899.90f, (byte)3, "Aparat de gradinarit"  );
-                MasinaTunsIarba grassCutterProduceNumber10 = new MasinaTunsIarba("curent electric",3.2f,"buton", (byte)40, "black", "Hyundai" , "HY-LM4601 GT", 1478.00f, (byte)3, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber1 = new MasinaTunsIarba("Grunman","ASMR3","benzina", 3.5f, "sfoara", (byte)41 , "red", 1749.90f, (byte)4, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber2 = new MasinaTunsIarba("Honda","LMO","motorina", 4.2f, "sfoara", (byte)56 , "green", 899.99f, (byte)2, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber3 = new MasinaTunsIarba("Wolfson","Stanley","benzina", 3.0f, "buton", (byte)60 , "yellow", 792.96f, (byte)2, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber4 = new MasinaTunsIarba("Bosch","ARM 3400","electric", 4.5f, "buton", (byte)45 , "rosie", 649.90f, (byte)2, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber5 = new MasinaTunsIarba("Karcher","K2","motorina", 3.4f, "buton", (byte)50 , "blue", 2999.99f, (byte)5, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber6 = new MasinaTunsIarba("Dewalt","T400I","benzina", 2.8f, "buton", (byte)52 , "black", 3164.73f, (byte)4, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber7 = new MasinaTunsIarba("Riobi","R46","electric", 5f, "buton", (byte)38 , "yellow", 2195.00f, (byte)3, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber8 = new MasinaTunsIarba("Samsung","ProGarden S421-T6","motorina", 3.9f, "sfoara", (byte)65 , "green", 1855.99f, (byte)2, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber9 = new MasinaTunsIarba("IHunt","E148C","benzina", 3.2f, "sfoara", (byte)40 , "red", 1899.90f, (byte)3, "Aparat de gradinarit"  );
+                MasinaTunsIarba grassCutterProduceNumber10 = new MasinaTunsIarba("Hyundai","HY-LM4601 GT","electric", 3.4f, "sfoara", (byte)40 , "black", 1478.00f, (byte)3, "Aparat de gradinarit"  );
                 
                 //System.out.println("Vectorul de masini de tuns iarba este : ");
                 Set<MasinaTunsIarba> listaMasiniTunsIarba = new HashSet<>();
@@ -45,7 +44,7 @@ public class AparateTest {
                 listaMasiniTunsIarba.add(grassCutterProduceNumber9);
                 listaMasiniTunsIarba.add(grassCutterProduceNumber10);
                 /*for(MasinaTunsIarba item :listaMasiniTunsIarba)
-                    System.out.println(item);
+                    System.out.println(item);*/
                 
                 Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
                 Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
@@ -71,7 +70,7 @@ public class AparateTest {
                 listaMotosape.add(motosapaProduceNumber10);
 
                 /*for(Motosapa item: listaMotosape )
-                    System.out.println(item);
+                    System.out.println(item);*/
                 
                 
                 //conditii afisare masini de tuns iarba dupa tipul de alimentare si pret  
@@ -132,9 +131,9 @@ public class AparateTest {
                 drujbaList.add(numarul9);
                 drujbaList.add(numarul10);
                 
-                /*for(Drujba i : drujbaList){
-                    System.out.println(i);
-                }
+                /*for(Drujba i : drujbaList)
+                    System.out.println(i);*/
+                
                 for (Drujba i : drujbaList){
                     if(i.getModelDrujba().equals("un model") && i.getCuloare().equals("albastru"))
                             System.out.println(i);
@@ -239,17 +238,10 @@ public class AparateTest {
             if (g.getPutereAparat() > 3.0 && g.getPret() < 500.0f) {
                 System.out.println(g);
             }
-        }*/
-              
+}}
                 
-                JFrame frame = new JFrame();
-                
-                
-                
-                frame.setVisible(true);
-                
-	}
 }
+
 
 
 

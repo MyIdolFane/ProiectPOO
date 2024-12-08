@@ -1,6 +1,7 @@
 package device;
+import java.io.Serializable;
 
-public class MasinaTunsIarba extends Aparat implements Comportament {
+public class MasinaTunsIarba extends Aparat implements Comportament,Serializable {
    private String tipAlimentare;
    private float putereMotor;
    private String tipPornire;
@@ -11,7 +12,7 @@ public class MasinaTunsIarba extends Aparat implements Comportament {
         super();
     }
 
-    public MasinaTunsIarba(String tipAlimentare, float putereMotor, String tipPornire, byte latimeTaiere, String culoare, String brand,String model, float pret, byte garantie, String categorie) {
+    public MasinaTunsIarba(String brand, String model, String tipAlimentare, float putere, String tipPornire, byte latimeTaiere,String culoare, float pret, byte garantie, String categorie) {
         super( brand, model, pret, garantie, categorie);
         this.tipAlimentare = tipAlimentare;
         this.putereMotor = putereMotor;
