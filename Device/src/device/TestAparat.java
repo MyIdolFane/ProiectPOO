@@ -1,7 +1,6 @@
 package device;
 
 import java.util.ArrayList;
-
 public class TestAparat {
     public static void main(String[] args) {
        
@@ -91,3 +90,4 @@ public class TestAparat {
 
             }
         }
+

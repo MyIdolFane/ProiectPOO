@@ -46,8 +46,8 @@ public class AspiratorUmed extends AspiratorUscat{
 		return false;
 	}
 	public void setCapacitateApa(int capacitateApa) {
-    	this.capacitateApa = capacitateApa;
-    }
+   	this.capacitateApa = capacitateApa;
+   }
 	public int getCapacitateApa() {
 		return 0;
 	}
