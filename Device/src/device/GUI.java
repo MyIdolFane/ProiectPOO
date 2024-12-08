@@ -81,6 +81,7 @@ public class GUI extends javax.swing.JFrame {
         }
 
         jButton3.setText("jButton3");
+        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jButton4.setText("jButton4");
 
