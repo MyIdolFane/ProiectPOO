@@ -86,9 +86,7 @@ public Trimmer(Trimmer altObiect){
     public String toString() {
         return "Trimmer{" + "diametruDeTaiere=" + diametruDeTaiere + ", greutate=" + greutate + ", putere=" + putere + ", tipMotor=" + tipMotor + ", acumulator=" + acumulator + '}';
     }
-
-
-    
+ 
 
     @Override
     public void estePornit() {
