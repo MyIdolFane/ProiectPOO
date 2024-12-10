@@ -15,7 +15,7 @@ public class MasinaTunsIarba extends Aparat implements Comportament,Serializable
     public MasinaTunsIarba(String brand, String model, String tipAlimentare, float putere, String tipPornire, byte latimeTaiere,String culoare, float pret, byte garantie, String categorie) {
         super( brand, model, pret, garantie, categorie);
         this.tipAlimentare = tipAlimentare;
-        this.putereMotor = putereMotor;
+        this.putereMotor = putere;
         this.tipPornire = tipPornire;
         this.latimeTaiere = latimeTaiere;
         this.culoare = culoare;
@@ -53,7 +53,7 @@ public class MasinaTunsIarba extends Aparat implements Comportament,Serializable
         this.tipPornire = tipPornire;
     }
 
-    public int getLatimeTaiere() {
+    public byte getLatimeTaiere() {
         return latimeTaiere;
     }
 
@@ -76,6 +76,9 @@ public class MasinaTunsIarba extends Aparat implements Comportament,Serializable
         return " Masina de tuns iarba : \n" + "Tip alimentare = " + tipAlimentare + " ; " 
                 + "Putere motor = " + putereMotor + " ; " + "Tip pornire = " + tipPornire + " ; " + "Latime taiere = " + latimeTaiere + " ; " 
                 +  "Culoare = " + culoare + " ; " + super.toString();
+    }
+    public String afisare(){
+    return super.getBrand() + "," + super.getModel() + "," + tipAlimentare + "," + putereMotor + "," + tipPornire + "," + latimeTaiere + "," + culoare + "," + super.getPret() + "," + super.getGarantie() + "," + super.getCategorie();
     }
 
     @Override
