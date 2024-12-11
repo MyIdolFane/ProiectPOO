@@ -43,7 +43,6 @@ public class GuiDenis extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
@@ -80,21 +79,42 @@ public class GuiDenis extends javax.swing.JFrame {
         ClearTableButton = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         putereFiltrare = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel15 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel16 = new javax.swing.JLabel();
+        brandMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel17 = new javax.swing.JLabel();
+        modelMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel18 = new javax.swing.JLabel();
+        tipPornireMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel19 = new javax.swing.JLabel();
+        tipAlimentareMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel20 = new javax.swing.JLabel();
+        capacitateCilindricaMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel21 = new javax.swing.JLabel();
+        putereMotorMotosapaText = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        motosapeTable = new javax.swing.JTable();
+        javax.swing.JLabel jLabel22 = new javax.swing.JLabel();
+        numarVitezeMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel23 = new javax.swing.JLabel();
+        pretMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel24 = new javax.swing.JLabel();
+        garantieMotosapaText = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel25 = new javax.swing.JLabel();
+        categorieMotosapaText = new javax.swing.JTextField();
+        afisareTabelMotosapeButton = new javax.swing.JButton();
+        eliberareTableMotosapeButton = new javax.swing.JButton();
+        addMotosapaButton = new javax.swing.JButton();
+        deleteMotosapaButton = new javax.swing.JButton();
+        SaveListaMotosapeButton = new javax.swing.JButton();
+        javax.swing.JLabel jLabel26 = new javax.swing.JLabel();
+        tipAlimentareMotosapeFilter = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel27 = new javax.swing.JLabel();
+        pretMotosapaFilter = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 925, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 399, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Motosape", jPanel1);
 
         jLabel1.setText("Date Campuri :");
 
@@ -269,7 +289,7 @@ public class GuiDenis extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(putereFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,10 +339,238 @@ public class GuiDenis extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel13)
                         .addComponent(latimeTaiereFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("MasiniTunsIarba", jPanel2);
+
+        jLabel15.setText("Date Campuri :");
+
+        jLabel16.setText("Brand :");
+
+        jLabel17.setText("Model :");
+
+        jLabel18.setText("Tip Pornire");
+
+        jLabel19.setText("Tip Alimentare");
+
+        jLabel20.setText("Capacitate cilindrica");
+
+        jLabel21.setText("Putere Motor");
+
+        motosapeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Brand", "Model", "Tip Pornire", "Tip Alimentare", "Capacitate cilindrica", "Putere Motor", "Numar viteze", "Pret", "Garantie", "Categorie"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Byte.class, java.lang.Byte.class, java.lang.Float.class, java.lang.Byte.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(motosapeTable);
+
+        jLabel22.setText("Numar viteze: ");
+
+        jLabel23.setText("Pret :");
+
+        jLabel24.setText("Garantie :");
+
+        jLabel25.setText("Categorie :");
+
+        afisareTabelMotosapeButton.setText("Afisare tabel");
+        afisareTabelMotosapeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afisareTabelMotosapeButtonActionPerformed(evt);
+            }
+        });
+
+        eliberareTableMotosapeButton.setText("Eliberare tabel");
+        eliberareTableMotosapeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliberareTableMotosapeButtonActionPerformed(evt);
+            }
+        });
+
+        addMotosapaButton.setText("Add");
+        addMotosapaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMotosapaButtonActionPerformed(evt);
+            }
+        });
+
+        deleteMotosapaButton.setText("Delete");
+        deleteMotosapaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMotosapaButtonActionPerformed(evt);
+            }
+        });
+
+        SaveListaMotosapeButton.setText("Save");
+        SaveListaMotosapeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveListaMotosapeButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("TipAlimentare");
+
+        jLabel27.setText("Pret");
+
+        jButton6.setText("Sort");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel21)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(putereMotorMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(brandMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(numarVitezeMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pretMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(garantieMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(modelMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tipPornireMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tipAlimentareMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(capacitateCilindricaMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(categorieMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(afisareTabelMotosapeButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(eliberareTableMotosapeButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(addMotosapaButton)
+                                .addGap(27, 27, 27)
+                                .addComponent(deleteMotosapaButton)
+                                .addGap(59, 59, 59)
+                                .addComponent(SaveListaMotosapeButton)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pretMotosapaFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tipAlimentareMotosapeFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(67, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(344, 344, 344))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(tipAlimentareMotosapeFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(afisareTabelMotosapeButton)
+                    .addComponent(eliberareTableMotosapeButton))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(pretMotosapaFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addMotosapaButton)
+                    .addComponent(deleteMotosapaButton)
+                    .addComponent(SaveListaMotosapeButton))
+                .addGap(59, 59, 59))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(brandMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(modelMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(tipPornireMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(tipAlimentareMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(capacitateCilindricaMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(putereMotorMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(numarVitezeMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(pretMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(garantieMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(categorieMotosapaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jButton6)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Motosape", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -369,7 +617,7 @@ public class GuiDenis extends javax.swing.JFrame {
         DefaultTableModel modelTabela = (DefaultTableModel) masiniTunsIarba.getModel();
         modelTabela.addRow(new Object[] {brand, model, alimentare, putere, pornire, latimeTaiere, culoare, pret, garantie, categorie});
         MasinaTunsIarba masina = new MasinaTunsIarba(brand, model, alimentare, putere, pornire, latimeTaiere, culoare, pret, garantie, categorie);
-        listaMasiniTunsIarba.add(masina); lengthArray++;
+        listaMasiniTunsIarba.add(masina); lengthMasiniTunsIarbaArray++;
         }
         brandText.setText("");
         modelText.setText("");
@@ -393,40 +641,26 @@ public class GuiDenis extends javax.swing.JFrame {
                                         JOptionPane.ERROR_MESSAGE);//EROARE IN CAZ DE NU AM SELECTAT NICIUN RAND 
         }else{
             DefaultTableModel modelTabela = (DefaultTableModel) masiniTunsIarba.getModel();
-            modelTabela.removeRow(linie); lengthArray--;
+            modelTabela.removeRow(linie); lengthMasiniTunsIarbaArray--;
         }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void populateTableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_populateTableButtonActionPerformed
         // TODO add your handling code here:
-        incarcareTabel();
+        incarcareMasiniTunsIarbaTabel();
     }//GEN-LAST:event_populateTableButtonActionPerformed
 
     private void SalvareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareButonActionPerformed
         // TODO add your handling code here:
-        /*DefaultTableModel modelTabela = (DefaultTableModel) masiniTunsIarba.getModel();
-         Vector<Vector> dataTabela = modelTabela.getDataVector();
-         //METODA DE SALVARE A DATELOR IN FISIER
-         
-         try {
-             FileOutputStream file = new FileOutputStream("C:\\Users\\denia\\Documents\\tttt\\Device\\DateMasiniTunsIarba.txt");
-             ObjectOutputStream output = new ObjectOutputStream(file);
-             
-             output.writeObject(dataTabela);
-             
-             output.close();
-             file.close();
-         }catch(Exception e){
-            e.printStackTrace();
-         }*/
+
        
-         try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\denia\\Documents\\tttt\\Device\\Data.csv"))) {
-        for (int i = 0; i < lengthArray - 1; i++) {
+         try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Sara\\Desktop\\Proiect POO\\DateMasiniTunsIarba.csv"))) {
+        for (int i = 0; i < lengthMasiniTunsIarbaArray; i++) {
             MasinaTunsIarba product = listaMasiniTunsIarba.get(i);
             writer.write(product.afisare());
             writer.newLine();
 }
-        System.out.println("Data has been saved to products.csv");
+        //rowsDeleted=0;
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -441,6 +675,7 @@ public class GuiDenis extends javax.swing.JFrame {
         float pret = Float.parseFloat(pretFiltrare.getText());
         byte lungime = Byte.parseByte(latimeTaiereFiltrare.getText());
         float putere = Float.parseFloat(putereFiltrare.getText());
+        
         for (MasinaTunsIarba item : listaMasiniTunsIarba){
                 if(item.getPret()>=pret && item.getLatimeTaiere()>=lungime && item.getPutereMotor()>=putere){
                 
@@ -461,6 +696,9 @@ public class GuiDenis extends javax.swing.JFrame {
                 }
                     
         }
+        pretFiltrare.setText("");
+        latimeTaiereFiltrare.setText("");
+        putereFiltrare.setText("");
         
     }//GEN-LAST:event_sortButtonActionPerformed
 
@@ -470,18 +708,144 @@ public class GuiDenis extends javax.swing.JFrame {
         clearTable(modelTabela);//APELEAZA METODA DE ELIBERARE A TABELULUI
     }//GEN-LAST:event_ClearTableButtonActionPerformed
 
+    private void afisareTabelMotosapeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisareTabelMotosapeButtonActionPerformed
+        // TODO add your handling code here:
+        incarcareMotosapeTabel();
+        
+    }//GEN-LAST:event_afisareTabelMotosapeButtonActionPerformed
+public void incarcareMotosapeTabel(){ // METODA PENTRU A INCARCA ELEMENTELE IN TABEL ; IAU FIECARE ELEMENT 
+    DefaultTableModel model = (DefaultTableModel) motosapeTable.getModel();//DIN ARRAYLIST SI IL INSEREZ IN MODELUL DE TABEL
+    Object linie[] = new Object[10]; //String brand,String model, String tipPornire, String tipAlimentare, int capacitateCilindrica, byte putereMotor, byte numarViteze,  float pret, byte garantie, String categorie
+    for(int i = 0 ; i<listaMotosapa.size(); i++ ){
+        linie[0]=listaMotosapa.get(i).getBrand();
+        linie[1]=listaMotosapa.get(i).getModel();
+        linie[2]=listaMotosapa.get(i).getTipPornire();
+        linie[3]=listaMotosapa.get(i).getPutereMotor();
+        linie[4]=listaMotosapa.get(i).getTipAlimentare();
+        linie[5]=listaMotosapa.get(i).getCapacitateCilindrica();
+        linie[6]=listaMotosapa.get(i).getNumarViteze();
+        linie[7]=listaMotosapa.get(i).getPret();
+        linie[8]=listaMotosapa.get(i).getGarantie();
+        linie[9]=listaMotosapa.get(i).getCategorie();
+        model.addRow(linie);
+    }}
+    private void deleteMotosapaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMotosapaButtonActionPerformed
+        // TODO add your handling code here:
+        int linie = motosapeTable.getSelectedRow();
+        if(linie < 0){//BUTON DE STERGERE A UNUI RAND DIN TABEL
+        JOptionPane.showMessageDialog(this,
+                                        "Selecteaza o linie",
+                                        "Eroare nu ati selectat nicio linie !",
+                                        JOptionPane.ERROR_MESSAGE);//EROARE IN CAZ DE NU AM SELECTAT NICIUN RAND 
+        }else{
+            DefaultTableModel modelTabela = (DefaultTableModel) motosapeTable.getModel();
+            modelTabela.removeRow(linie); lengthMotosapeArray--;
+        }
+    }//GEN-LAST:event_deleteMotosapaButtonActionPerformed
+
+    private void SaveListaMotosapeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveListaMotosapeButtonActionPerformed
+        // TODO add your handling code here:
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Sara\\Desktop\\Proiect POO\\DateMasiniTunsIarba.csv"))) {
+        for (int i = 0; i < lengthMotosapeArray; i++) {
+            Motosapa product = listaMotosapa.get(i);
+            writer.write(product.afisare());
+            writer.newLine();
+}
+        //rowsDeleted=0;
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        
+    }//GEN-LAST:event_SaveListaMotosapeButtonActionPerformed
+
+    private void addMotosapaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMotosapaButtonActionPerformed
+        // TODO add your handling code here:
+        String brand = brandMotosapaText.getText();
+        String model = modelMotosapaText.getText();
+        String tipPornire = tipPornireMotosapaText.getText();
+        String tipAlimentare = tipAlimentareMotosapaText.getText();
+        int capacitateCilindrica = Integer.parseInt(capacitateCilindricaMotosapaText.getText());
+        byte putereMotor = Byte.parseByte(putereMotorMotosapaText.getText());
+        byte numarViteze = Byte.parseByte(numarVitezeMotosapaText.getText());
+        float pret = Float.parseFloat(pretMotosapaText.getText());
+        byte garantie = Byte.parseByte(garantieMotosapaText.getText());
+        String categorie = categorieMotosapaText.getText();
+        //BUTONUL DE ADAUGARE A UNUI NOU ELEMENT IN TABEL , DUPA ADAUGARE , ELIBEREAZA CASETELE DE VALORI 
+        if(brand.isEmpty() || model.isEmpty() || tipPornire.isEmpty() || tipAlimentare.isEmpty() || capacitateCilindrica == 0 || putereMotor == 0 || numarViteze == 0  || pret == 0 || garantie == 0 || categorie.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                                            "Completati toate campurile",
+                                                "Incercati din nou ",//EROARE IN CAZ DE NU AM COMPLETAT TOATE CASETELE 
+                                                JOptionPane.ERROR_MESSAGE);
+                                                
+        }else{
+        DefaultTableModel modelTabela = (DefaultTableModel) motosapeTable.getModel();
+        modelTabela.addRow(new Object[] {brand, model, tipPornire, tipAlimentare, capacitateCilindrica, putereMotor, numarViteze, pret, garantie, categorie});
+        Motosapa motosapa = new Motosapa(brand, model, tipPornire, tipAlimentare, capacitateCilindrica, putereMotor, numarViteze, pret, garantie, categorie);
+        listaMotosapa.add(motosapa); lengthMotosapeArray++;
+        }
+        brandMotosapaText.setText("");
+        modelMotosapaText.setText("");
+        tipPornireMotosapaText.setText("");
+        tipAlimentareMotosapaText.setText("");
+        capacitateCilindricaMotosapaText.setText("");
+        putereMotorMotosapaText.setText("");
+        numarVitezeMotosapaText.setText("");
+        pretMotosapaText.setText("");
+        garantieMotosapaText.setText("");
+        categorieMotosapaText.setText("");
+        
+    }//GEN-LAST:event_addMotosapaButtonActionPerformed
+
+    private void eliberareTableMotosapeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliberareTableMotosapeButtonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelTabela = (DefaultTableModel) motosapeTable.getModel();//BUTONUL PENTRU ELIBERAREA TABELULUI
+        clearTable(modelTabela);//APELEAZA METODA DE ELIBERARE A TABELULUI
+    }//GEN-LAST:event_eliberareTableMotosapeButtonActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelTabela = (DefaultTableModel) motosapeTable.getModel();//MAI INTAI ELIBERAM TABELUL SA NU SE ADAUGE INCONTINUARE
+        clearTable(modelTabela);//BUTONUL DE SORTARE ; IA VALOARE DIN CAMPURILE MENTIONATE SI LE PUNE PE POST DE CONDITIE PENTRU AFISARE
+        
+        String tipAlimentare = tipAlimentareMotosapeFilter.getText();
+        float pret = Float.parseFloat(pretMotosapaFilter.getText());
+        
+        for (Motosapa item : listaMotosapa){
+                if(item.getPret()>=pret && item.getTipAlimentare().equals(tipAlimentare)){
+                
+                Object linie[] = new Object[10]; 
+                
+                linie[0]=item.getBrand();
+                linie[1]=item.getModel();
+                linie[2]=item.getTipPornire();
+                linie[3]=item.getPutereMotor();
+                linie[4]=item.getTipAlimentare();
+                linie[5]=item.getCapacitateCilindrica();
+                linie[6]=item.getNumarViteze();
+                linie[7]=item.getPret();
+                linie[8]=item.getGarantie();
+                linie[9]=item.getCategorie();
+                
+                }
+                    
+        }
+        tipAlimentareMotosapeFilter.setText("");
+        pretMotosapaFilter.setText("");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static ArrayList<MasinaTunsIarba> listaMasiniTunsIarba = new ArrayList<>();
     public static ArrayList<Motosapa> listaMotosapa = new ArrayList<>();
-    public static int lengthArray;
+    public static int lengthMasiniTunsIarbaArray = 0;
+    public static int lengthMotosapeArray = 0;
     
     public void clearTable(DefaultTableModel model){//METODA DE ELIBERARE A TABELULUI , SA NU IMI MAI AFISEZE NIMIC
      model.setRowCount(0);
     }
     
-    public void incarcareTabel(){ // METODA PENTRU A INCARCA ELEMENTELE IN TABEL ; IAU FIECARE ELEMENT 
+    public void incarcareMasiniTunsIarbaTabel(){ // METODA PENTRU A INCARCA ELEMENTELE IN TABEL ; IAU FIECARE ELEMENT 
     DefaultTableModel model = (DefaultTableModel) masiniTunsIarba.getModel();//DIN ARRAYLIST SI IL INSEREZ IN MODELUL DE TABEL
     Object linie[] = new Object[10]; 
     for(int i = 0 ; i<listaMasiniTunsIarba.size(); i++ ){
@@ -522,10 +886,10 @@ public class GuiDenis extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GuiDenis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold 
-                 try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\denia\\Documents\\tttt\\Device\\Data.csv"))) {
+                 try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sara\\Desktop\\Proiect POO\\DateMasiniTunsIarba.csv"))) {
                   String line;
                  while ((line = br.readLine()) != null) {
-                // Split each line by commas and add the resulting array to the ArrayList
+                
                       String[] parts = line.split(",");
                       String brand = parts[0];
                         String model = parts[1];
@@ -540,39 +904,36 @@ public class GuiDenis extends javax.swing.JFrame {
                 
                 
                         MasinaTunsIarba masina = new MasinaTunsIarba(brand, model, tipAlimentare, power, stringType, weight, color, price, rating, category);
-                        listaMasiniTunsIarba.add(masina); lengthArray++;
+                        listaMasiniTunsIarba.add(masina); lengthMasiniTunsIarbaArray++;
             }} catch (IOException e) {
             e.printStackTrace();
         }
-        // Read the file using BufferedReader
-/*        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\denia\\Documents\\tttt\\Device\\DateMasiniTunsIarba.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                //CITIM DIN FISIER LA LANSAREA PROGRAMULUI SI PUNEM DATELE INTR-UN ARRAYLIST PENTRU A LE PUTEA PRELUCRA
-                
-                String[] parts = line.split(",");
-                System.out.println(parts.length);
-                
-                String brand = parts[0];
-                String model = parts[1];
-                String tipAlimentare = parts[2];
-                float power = Float.parseFloat(parts[3]);
-                String stringType = parts[4];
-                byte weight = Byte.parseByte(parts[5].trim());
-                String color = parts[6];
-                float price = Float.parseFloat(parts[7]);
-                byte rating = Byte.parseByte(parts[8].trim());
-                String category = parts[9];
-                
-                
-                MasinaTunsIarba masina = new MasinaTunsIarba(brand, model, tipAlimentare, power, stringType, weight, color, price, rating, category);
-                listaMasiniTunsIarba.add(masina);
-            }
-        } catch (IOException e) {
-            e.printStackTrace(); 
-        }*/
-        
-        System.out.println(listaMasiniTunsIarba);
+                 
+                 
+                 try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sara\\Desktop\\Proiect POO\\DateMotosapa.csv"))) {
+                  String line;
+                 while ((line = br.readLine()) != null) {//String brand,String model, String tipPornire, String tipAlimentare, int capacitateCilindrica, byte putereMotor, byte numarViteze,  float pret, byte garantie, String categorie
+                        String[] parts = line.split(",");
+                        
+                        String brand = parts[0];
+                        String model = parts[1];
+                        String tipPornire = parts[2];
+                        String tipAlimentare = parts[3];
+                        int capacitateCilindrica = Integer.parseInt(parts[4]);
+                        byte putereMotor = Byte.parseByte(parts[5]);
+                        byte numarViteze = Byte.parseByte(parts[6]);
+                        float pret = Float.parseFloat(parts[7]);
+                        byte garantie = Byte.parseByte(parts[8]);
+                        String categorie = parts[9];
+
+                        Motosapa motosapa = new Motosapa(brand, model, tipPornire,tipAlimentare, capacitateCilindrica, putereMotor, numarViteze, pret, garantie,categorie);
+                        
+                        listaMotosapa.add(motosapa); lengthMotosapeArray++;
+            }} catch (IOException e) {
+            e.printStackTrace();
+        }
+                 
+        //System.out.println(listaMasiniTunsIarba);
         
         
         
@@ -589,26 +950,46 @@ public class GuiDenis extends javax.swing.JFrame {
     private javax.swing.JButton ClearTableButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton SalvareButon;
+    private javax.swing.JButton SaveListaMotosapeButton;
+    private javax.swing.JButton addMotosapaButton;
+    private javax.swing.JButton afisareTabelMotosapeButton;
     private javax.swing.JTextField alimentareText;
+    private javax.swing.JTextField brandMotosapaText;
     private javax.swing.JTextField brandText;
+    private javax.swing.JTextField capacitateCilindricaMotosapaText;
+    private javax.swing.JTextField categorieMotosapaText;
     private javax.swing.JTextField categorieText;
     private javax.swing.JTextField culoareText;
+    private javax.swing.JButton deleteMotosapaButton;
+    private javax.swing.JButton eliberareTableMotosapeButton;
+    private javax.swing.JTextField garantieMotosapaText;
     private javax.swing.JTextField garantieText;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField latimeTaiereFiltrare;
     private javax.swing.JTextField latimeTaiereText;
     private static javax.swing.JTable masiniTunsIarba;
+    private javax.swing.JTextField modelMotosapaText;
     private javax.swing.JTextField modelText;
+    private javax.swing.JTable motosapeTable;
+    private javax.swing.JTextField numarVitezeMotosapaText;
     private javax.swing.JButton populateTableButton;
     private javax.swing.JTextField pornireText;
     private javax.swing.JTextField pretFiltrare;
+    private javax.swing.JTextField pretMotosapaFilter;
+    private javax.swing.JTextField pretMotosapaText;
     private javax.swing.JTextField pretText;
     private javax.swing.JTextField putereFiltrare;
+    private javax.swing.JTextField putereMotorMotosapaText;
     private javax.swing.JTextField putereText;
     private javax.swing.JButton sortButton;
+    private javax.swing.JTextField tipAlimentareMotosapaText;
+    private javax.swing.JTextField tipAlimentareMotosapeFilter;
+    private javax.swing.JTextField tipPornireMotosapaText;
     // End of variables declaration//GEN-END:variables
 }

@@ -98,5 +98,8 @@ public Trimmer(Trimmer altObiect){
         System.out.println("Trimmerul este in reparatii");
 
     }
+    public String afisare(){
+    return diametruDeTaiere + "," + greutate + "," + putere + "," +tipMotor + "," + acumulator + "," + super.getBrand() + "," + super.getModel() + "," + super.getPret() + "," + super.getGarantie() + "," + super.getCategorie();
+    }
     
 }

@@ -4,14 +4,18 @@
  */
 package device;
 
+
+
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.RowFilter;
-import javax.swing.RowFilter.Entry;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
+
 
 /**
  *
@@ -40,16 +44,16 @@ public class GUI_Sara extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TrimmerTabel = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel4 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel6 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel8 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel9 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel10 = new javax.swing.JLabel();
         ModelText = new javax.swing.JTextField();
         GreutateText = new javax.swing.JTextField();
         PutereText = new javax.swing.JTextField();
@@ -59,37 +63,71 @@ public class GUI_Sara extends javax.swing.JFrame {
         PretText = new javax.swing.JTextField();
         GarantieText = new javax.swing.JTextField();
         CategorieText = new javax.swing.JTextField();
-        SalvareButon = new javax.swing.JButton();
+        adaugareRandNouTrimmerButon = new javax.swing.JButton();
         SortareButon = new javax.swing.JButton();
         StergereButon = new javax.swing.JButton();
         AcumulatorButton = new javax.swing.JToggleButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel11 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel12 = new javax.swing.JLabel();
         pretFiltrareText = new javax.swing.JTextField();
         garantieFiltrareText = new javax.swing.JTextField();
+        afisareButon = new javax.swing.JButton();
+        eliberareButon = new javax.swing.JButton();
+        salvareInFisierButon = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel13 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel14 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel15 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel16 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel17 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel18 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel19 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel20 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel21 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel22 = new javax.swing.JLabel();
+        anFabricatieText = new javax.swing.JTextField();
+        putereDrujbaText = new javax.swing.JTextField();
+        modelDrujbaText = new javax.swing.JTextField();
+        culoareText = new javax.swing.JTextField();
+        tipAlimentareDrujbaText = new javax.swing.JTextField();
+        brandDrujbaText = new javax.swing.JTextField();
+        modelSimpluText = new javax.swing.JTextField();
+        pretDrujbaText = new javax.swing.JTextField();
+        garantieDrujbaText = new javax.swing.JTextField();
+        categorieDrujbaText = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        drujbaTabel = new javax.swing.JTable();
+        adaugareRandNouDrujbaButon = new javax.swing.JButton();
+        sortareButon = new javax.swing.JButton();
+        stergereRandButon = new javax.swing.JButton();
+        afisareDateTabelDrujbaButon = new javax.swing.JButton();
+        eliberareDrujbaButon = new javax.swing.JButton();
+        salvareFisierDrujbaButon = new javax.swing.JButton();
+        javax.swing.JLabel jLabel23 = new javax.swing.JLabel();
+        anFabricatieDrujbaFiltrare = new javax.swing.JTextField();
+        javax.swing.JLabel jLabel24 = new javax.swing.JLabel();
+        tipAlimentareDrujbaFiltrare = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TrimmerTabel.setAutoCreateRowSorter(true);
         TrimmerTabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {32, 1.7, 1000, "benzina", false, "Husqvarna", "128R", 349.99f,(byte) 4, "aparat de gradinarit"},
-                {36, 1, 320, "motorina", false, "Makita", "UR3000", 599.99f,(byte) 3, "aparat de gradinarit"},
-                {40, 1.3, 500, "benzina", false, "Echo", "SRM-225", 299.99f,(byte) 2, "aparat de gradinarit"},
-                {39, 3.2, 405, "electric", true, "Honda", " UMS425", 342.99f,(byte) 1, "aparat de gradinarit"},
-                {45, 2.3, 459, "benzina", false, "Bosch", "GL7033", 449.99f,(byte) 5, "aparat de gradinarit"},
-                {37, 2.1, 439, "motorina", false, "Ryobi", "ART 30-36 LI", 554.99f,(byte) 3, "aparat de gradinarit"},
-                {23, 1.9, 640, "electric", true, "Gardena", "RBC30SB", 279.99f,(byte) 4, "aparat de gradinarit"},
-                {29, 3.5, 499, "benzina", false, "Oleo-Mac", "450", 329.99f,(byte) 5, "aparat de gradinarit"},
-                {27, 1.6, 180, "motorina", false, "Black+Decker", "Sparta 2500", 300.00f,(byte) 2, "aparat de gradinarit"}
 
             },
             new String [] {
-                "Diametru Taiere", "Greutate", "Putere", "Tip motor", "Acumulator","Brand", "Model", "Pret", "Garantie", "Categorie"
+                "Diametru Taiere", "Greutate", "Putere", "Tip Motor", "Acumulator", "Brand", "Model", "Pret", "Garantie", "Categorie"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Byte.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TrimmerTabel);
 
         jLabel1.setText("Model");
@@ -124,10 +162,10 @@ public class GUI_Sara extends javax.swing.JFrame {
             }
         });
 
-        SalvareButon.setText("Salvare");
-        SalvareButon.addActionListener(new java.awt.event.ActionListener() {
+        adaugareRandNouTrimmerButon.setText("Adaugare rand nou");
+        adaugareRandNouTrimmerButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalvareButonActionPerformed(evt);
+                adaugareRandNouTrimmerButonActionPerformed(evt);
             }
         });
 
@@ -155,6 +193,27 @@ public class GUI_Sara extends javax.swing.JFrame {
         jLabel11.setText("Pret");
 
         jLabel12.setText("Garantie");
+
+        afisareButon.setText("Afisare");
+        afisareButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afisareButonActionPerformed(evt);
+            }
+        });
+
+        eliberareButon.setText("Eliberare");
+        eliberareButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliberareButonActionPerformed(evt);
+            }
+        });
+
+        salvareInFisierButon.setText("Salvare in fisier");
+        salvareInFisierButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvareInFisierButonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -188,15 +247,26 @@ public class GUI_Sara extends javax.swing.JFrame {
                             .addComponent(DiametruText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PretText, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AcumulatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(SalvareButon)
-                                .addGap(252, 252, 252)
-                                .addComponent(SortareButon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(StergereButon)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(adaugareRandNouTrimmerButon)
+                                        .addGap(224, 224, 224)
+                                        .addComponent(SortareButon)
+                                        .addGap(259, 259, 259)
+                                        .addComponent(StergereButon))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(afisareButon)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(eliberareButon)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(salvareInFisierButon)
+                                        .addGap(43, 43, 43)))))
                         .addGap(47, 47, 47))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -214,8 +284,8 @@ public class GUI_Sara extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pretFiltrareText, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(garantieFiltrareText, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -256,10 +326,18 @@ public class GUI_Sara extends javax.swing.JFrame {
                                     .addComponent(BrandText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(PretText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(PretText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(afisareButon)
+                            .addComponent(eliberareButon)
+                            .addComponent(salvareInFisierButon))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -271,15 +349,15 @@ public class GUI_Sara extends javax.swing.JFrame {
                     .addComponent(pretFiltrareText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(garantieFiltrareText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10)
-                    .addComponent(CategorieText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvareButon)
+                    .addComponent(CategorieText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adaugareRandNouTrimmerButon)
                     .addComponent(SortareButon)
                     .addComponent(StergereButon))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -297,26 +375,250 @@ public class GUI_Sara extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Trimmer", jPanel1);
 
+        jLabel13.setText("An Fabricatie");
+
+        jLabel14.setText("Putere");
+
+        jLabel15.setText("Model Drujba");
+
+        jLabel16.setText("Culoare");
+
+        jLabel17.setText("Tip Alimentare");
+
+        jLabel18.setText("Brand");
+
+        jLabel19.setText("Model");
+
+        jLabel20.setText("Pret");
+
+        jLabel21.setText("Garantie");
+
+        jLabel22.setText("Categorie");
+
+        drujbaTabel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "An Fabricatie", "Putere", "Model Drujba", "Culoare", "Tip Alimentare", "Brand", "Model", "Pret", "Garantie", "Categorie"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Byte.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(drujbaTabel);
+        if (drujbaTabel.getColumnModel().getColumnCount() > 0) {
+            drujbaTabel.getColumnModel().getColumn(0).setPreferredWidth(100);
+            drujbaTabel.getColumnModel().getColumn(2).setPreferredWidth(120);
+            drujbaTabel.getColumnModel().getColumn(4).setPreferredWidth(120);
+        }
+
+        adaugareRandNouDrujbaButon.setText("Adaudare rand nou");
+        adaugareRandNouDrujbaButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adaugareRandNouDrujbaButonActionPerformed(evt);
+            }
+        });
+
+        sortareButon.setText("Sortare");
+        sortareButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortareButonActionPerformed(evt);
+            }
+        });
+
+        stergereRandButon.setText("Stergere");
+        stergereRandButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stergereRandButonActionPerformed(evt);
+            }
+        });
+
+        afisareDateTabelDrujbaButon.setText("Afisare");
+        afisareDateTabelDrujbaButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afisareDateTabelDrujbaButonActionPerformed(evt);
+            }
+        });
+
+        eliberareDrujbaButon.setText("Eliberare");
+        eliberareDrujbaButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliberareDrujbaButonActionPerformed(evt);
+            }
+        });
+
+        salvareFisierDrujbaButon.setText("Salvare in fisier");
+        salvareFisierDrujbaButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvareFisierDrujbaButonActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("An Fabricatie dupa:");
+
+        jLabel24.setText("Tip Alimentare");
+
+        tipAlimentareDrujbaFiltrare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipAlimentareDrujbaFiltrareActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(9, 9, 9))
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(anFabricatieText, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(putereDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modelDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(culoareText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tipAlimentareDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(brandDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modelSimpluText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pretDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(garantieDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(categorieDrujbaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(adaugareRandNouDrujbaButon)
+                                    .addComponent(afisareDateTabelDrujbaButon))
+                                .addGap(195, 195, 195)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(eliberareDrujbaButon)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(salvareFisierDrujbaButon, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(stergereRandButon))))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel23)
+                        .addGap(27, 27, 27)
+                        .addComponent(anFabricatieDrujbaFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tipAlimentareDrujbaFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(sortareButon)))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(anFabricatieText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(putereDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(modelDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(culoareText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(tipAlimentareDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(brandDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(modelSimpluText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(afisareDateTabelDrujbaButon)
+                            .addComponent(eliberareDrujbaButon)
+                            .addComponent(salvareFisierDrujbaButon))))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(pretDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(anFabricatieDrujbaFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(tipAlimentareDrujbaFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(garantieDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sortareButon))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(categorieDrujbaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adaugareRandNouDrujbaButon)
+                    .addComponent(stergereRandButon))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 427, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
         );
 
         jTabbedPane1.addTab("Drujba", jPanel2);
@@ -339,20 +641,20 @@ public class GUI_Sara extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ModelTextActionPerformed
 
-    private void SalvareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareButonActionPerformed
+    private void adaugareRandNouTrimmerButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaugareRandNouTrimmerButonActionPerformed
         // TODO add your handling code here:
         String model = ModelText.getText();
-        String greutate = GreutateText.getText();
-        String putere = PutereText.getText();
+        double greutate = Double.parseDouble(GreutateText.getText());
+        int putere = Integer.parseInt(PutereText.getText());
         String tipMotor = TipMotorText.getText();
         boolean acumulator = AcumulatorButton.isSelected();
         String brand = BrandText.getText();
-        String diametru = DiametruText.getText();
-        String pret = PretText.getText();
-        String garantie = GarantieText.getText();
+        int  diametru = Integer.parseInt(DiametruText.getText());
+        float pret = Float.parseFloat(PretText.getText());
+        byte garantie = Byte.parseByte(GarantieText.getText());
         String categorie = CategorieText.getText();
         
-        if(brand.isEmpty() || model.isEmpty() || greutate.isEmpty() || putere.isEmpty() || tipMotor.isEmpty() || diametru.isEmpty() || pret.isEmpty() || garantie.isEmpty() || categorie.isEmpty()){
+        if(brand.isEmpty() || model.isEmpty() || greutate == 0 || putere == 0 || tipMotor.isEmpty() || diametru == 0 || pret == 0 || garantie == 0 || categorie.isEmpty()){
             JOptionPane.showMessageDialog(this,
                                             "Completati toate campurile",
                                                 "Incercati din nou ",
@@ -361,6 +663,8 @@ public class GUI_Sara extends javax.swing.JFrame {
         }else{
         DefaultTableModel modelTabela = (DefaultTableModel) TrimmerTabel.getModel();
         modelTabela.addRow(new Object[] {model, greutate, putere, tipMotor, acumulator, brand, diametru, pret, garantie, categorie});
+        Trimmer trimmer = new Trimmer(diametru, greutate,putere,tipMotor,acumulator,brand,model,pret,garantie,categorie);
+        trimmerList.add(trimmer); lungimeTrimmerList++;
         }
         BrandText.setText("");
         ModelText.setText("");
@@ -371,7 +675,7 @@ public class GUI_Sara extends javax.swing.JFrame {
         PretText.setText("");
         GarantieText.setText("");
         CategorieText.setText("");
-    }//GEN-LAST:event_SalvareButonActionPerformed
+    }//GEN-LAST:event_adaugareRandNouTrimmerButonActionPerformed
 
     private void PretTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PretTextActionPerformed
         // TODO add your handling code here:
@@ -392,47 +696,226 @@ public class GUI_Sara extends javax.swing.JFrame {
                                         JOptionPane.ERROR_MESSAGE);
         }else{
             DefaultTableModel modelTabela = (DefaultTableModel) TrimmerTabel.getModel();
-            modelTabela.removeRow(linie);
+            modelTabela.removeRow(linie);lungimeTrimmerList--;
         }
     }//GEN-LAST:event_StergereButonActionPerformed
 
     private void SortareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortareButonActionPerformed
         // TODO add your handling code here:
-            String pretText = pretFiltrareText.getText();
-            String garantieText = garantieFiltrareText.getText();
-
-            try {
-                float pretMax = pretText.isEmpty() ? Float.MAX_VALUE : Float.parseFloat(pretText);
-                byte garantie = garantieText.isEmpty() ? Byte.MIN_VALUE : Byte.parseByte(garantieText);
-
-                // Aplicăm filtrul
-                filterTable(TrimmerTabel, pretMax, garantie);
-            } catch (NumberFormatException ex) {
-                System.out.println("esec");
+            float pret = Float.parseFloat(pretFiltrareText.getText());
+            byte garantie = Byte.parseByte(garantieFiltrareText.getText());
+            
+            DefaultTableModel modelTabela = (DefaultTableModel) TrimmerTabel.getModel();//MAI INTAI ELIBERAM TABELUL SA NU SE ADAUGE INCONTINUARE
+            eliberareTabel(modelTabela);//BUTONUL DE SORTARE ; IA VALOARE DIN CAMPURILE MENTIONATE SI LE PUNE PE POST DE CONDITIE PENTRU AFISARE
+        
+            for (Trimmer trimmer : trimmerList){
+                if(trimmer.getPret()>=pret && trimmer.getGarantie()>=garantie){
+                
+                Object linie[] = new Object[10]; 
+                
+                linie[0]=trimmer.getDiametruDeTaiere();
+                linie[1]=trimmer.getGreutate();
+                linie[2]=trimmer.getPutere();
+                linie[3]=trimmer.getTipMotor();
+                linie[4]=trimmer.getAcumulator();
+                linie[5]=trimmer.getBrand();
+                linie[6]=trimmer.getModel();
+                linie[7]=trimmer.getPret();
+                linie[8]=trimmer.getGarantie();
+                linie[9]=trimmer.getCategorie();
+                modelTabela.addRow(linie);
+                
+                }
+                    
             }
+            pretFiltrareText.setText("");
+            garantieFiltrareText.setText("");
     }//GEN-LAST:event_SortareButonActionPerformed
 
-    private static void filterTable(JTable table, float pretMax, byte garantie) {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-        table.setRowSorter(sorter);
-
-        RowFilter<DefaultTableModel, Object> filter = new RowFilter<>() {
-           @Override
-            public boolean include(Entry<? extends DefaultTableModel, ? extends Object> entry) {
-                float pret = Float.parseFloat(entry.getStringValue(7)); // Coloana Pret
-                byte garantieValue = Byte.parseByte(entry.getStringValue(8)); // Coloana Garantie
-
-                // Condiția de filtrare
-                return pret <= pretMax && garantieValue == garantie;
-            }
-        };
-
-        sorter.setRowFilter(filter);
+    private void afisareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisareButonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TrimmerTabel.getModel();//DIN ARRAYLIST SI IL INSEREZ IN MODELUL DE TABEL
+        Object linie[] = new Object[10]; 
+        for(int i = 0 ; i<trimmerList.size(); i++ ){
+            linie[0]=trimmerList.get(i).getDiametruDeTaiere();
+            linie[1]=trimmerList.get(i).getGreutate();
+            linie[2]=trimmerList.get(i).getPutere();
+            linie[3]=trimmerList.get(i).getTipMotor();
+            linie[4]=trimmerList.get(i).getAcumulator();
+            linie[5]=trimmerList.get(i).getBrand();
+            linie[6]=trimmerList.get(i).getModel();
+            linie[7]=trimmerList.get(i).getPret();
+            linie[8]=trimmerList.get(i).getGarantie();
+            linie[9]=trimmerList.get(i).getCategorie();
+        model.addRow(linie);
     }
+    }//GEN-LAST:event_afisareButonActionPerformed
+
+    private void eliberareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliberareButonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TrimmerTabel.getModel();
+        eliberareTabel(model);
+        
+        
+    }//GEN-LAST:event_eliberareButonActionPerformed
+
+    private void salvareInFisierButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvareInFisierButonActionPerformed
+        // TODO add your handling code here:
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Sara\\Desktop\\Proiect POO\\Trimmer.csv"))) {
+        for (int i = 0; i < lungimeTrimmerList; i++) {
+            Trimmer trimmer = trimmerList.get(i);
+            writer.write(trimmer.afisare());
+            writer.newLine();
+}
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        
+    }//GEN-LAST:event_salvareInFisierButonActionPerformed
+
+    private void tipAlimentareDrujbaFiltrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipAlimentareDrujbaFiltrareActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipAlimentareDrujbaFiltrareActionPerformed
+
+    private void adaugareRandNouDrujbaButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaugareRandNouDrujbaButonActionPerformed
+        // TODO add your handling code here:
+        int anFabricatie = Integer.parseInt(anFabricatieText.getText());
+        double putere = Double.parseDouble(putereDrujbaText.getText());
+        String modelDrujba = modelDrujbaText.getText();
+        String culoare = culoareText.getText();
+        String tipAlimentare = tipAlimentareDrujbaText.getText();
+        String brand = brandDrujbaText.getText();
+        String modelSimplu = modelSimpluText.getText();
+        float pret = Float.parseFloat(pretDrujbaText.getText());
+        byte garantie = Byte.parseByte(garantieDrujbaText.getText());
+        String categorie = categorieDrujbaText.getText();
+        
+        
+        if(brand.isEmpty() || modelDrujba.isEmpty() || anFabricatie == 0 || putere == 0 || tipAlimentare.isEmpty() || modelSimplu.isEmpty() || pret == 0 || garantie == 0 || categorie.isEmpty() || culoare.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                                            "Completati toate campurile",
+                                                "Incercati din nou ",
+                                                JOptionPane.ERROR_MESSAGE);
+                                                
+        }else{
+        DefaultTableModel modelTabela = (DefaultTableModel) drujbaTabel.getModel();
+        modelTabela.addRow(new Object[] {anFabricatie, putere, modelDrujba, culoare, tipAlimentare, brand, modelSimplu, pret, garantie, categorie});
+        Drujba drujba = new Drujba(anFabricatie, putere, modelDrujba, culoare, tipAlimentare, brand, modelSimplu, pret, garantie, categorie);
+        drujbaList.add(drujba); lungimeDrujbaList++;
+        }
+        anFabricatieText.setText("");
+        putereDrujbaText.setText("");
+        modelDrujbaText.setText("");
+        culoareText.setText("");
+        tipAlimentareDrujbaText.setText("");
+        modelSimpluText.setText("");
+        brandDrujbaText.setText("");
+        PretText.setText("");
+        GarantieText.setText("");
+        CategorieText.setText("");
+        
+    }//GEN-LAST:event_adaugareRandNouDrujbaButonActionPerformed
+
+    private void afisareDateTabelDrujbaButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisareDateTabelDrujbaButonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) drujbaTabel.getModel();//DIN ARRAYLIST SI IL INSEREZ IN MODELUL DE TABEL
+        Object linie[] = new Object[10]; 
+        for(int i = 0 ; i<drujbaList.size(); i++ ){//anFabricatie, putere, modelDrujba, culoare, tipAlimentare, brand, modelSimplu, pret, garantie, categorie
+            linie[0]=drujbaList.get(i).getAnFabricatie();
+            linie[1]=drujbaList.get(i).getPutere();
+            linie[2]=drujbaList.get(i).getModelDrujba();
+            linie[3]=drujbaList.get(i).getCuloare();
+            linie[4]=drujbaList.get(i).getTipAlimentare();
+            linie[5]=drujbaList.get(i).getBrand();
+            linie[6]=drujbaList.get(i).getModel();
+            linie[7]=drujbaList.get(i).getPret();
+            linie[8]=drujbaList.get(i).getGarantie();
+            linie[9]=drujbaList.get(i).getCategorie();
+            model.addRow(linie);
+        
+        }
+    }//GEN-LAST:event_afisareDateTabelDrujbaButonActionPerformed
+
+    private void eliberareDrujbaButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliberareDrujbaButonActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) drujbaTabel.getModel();
+         eliberareTabel(model);
+    }//GEN-LAST:event_eliberareDrujbaButonActionPerformed
+
+    private void stergereRandButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stergereRandButonActionPerformed
+        // TODO add your handling code here:
+         int linie = drujbaTabel.getSelectedRow();
+        if(linie < 0){
+        JOptionPane.showMessageDialog(this,
+                                        "Selecteaza o linie",
+                                        "Eroare nu ati selectat nicio linie !",
+                                        JOptionPane.ERROR_MESSAGE);
+        }else{
+            DefaultTableModel modelTabela = (DefaultTableModel) drujbaTabel.getModel();
+            modelTabela.removeRow(linie);lungimeDrujbaList--;
+        }
+    }//GEN-LAST:event_stergereRandButonActionPerformed
+
+    private void sortareButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortareButonActionPerformed
+        // TODO add your handling code here:
+            int anFabricatie = Integer.parseInt(anFabricatieDrujbaFiltrare.getText());
+            String tipAlimentare = tipAlimentareDrujbaFiltrare.getText();
+            
+            DefaultTableModel modelTabela = (DefaultTableModel) drujbaTabel.getModel();//MAI INTAI ELIBERAM TABELUL SA NU SE ADAUGE INCONTINUARE
+            eliberareTabel(modelTabela);//BUTONUL DE SORTARE ; IA VALOARE DIN CAMPURILE MENTIONATE SI LE PUNE PE POST DE CONDITIE PENTRU AFISARE
+        
+            for (Drujba drujba : drujbaList){
+                if(drujba.getAnFabricatie()>=anFabricatie && drujba.getTipAlimentare().equals(tipAlimentare)){
+                
+                Object linie[] = new Object[10]; 
+                
+                linie[0]=drujba.getAnFabricatie();
+                linie[1]=drujba.getPutere();
+                linie[2]=drujba.getModelDrujba();
+                linie[3]=drujba.getCuloare();
+                linie[4]=drujba.getTipAlimentare();
+                linie[5]=drujba.getBrand();
+                linie[6]=drujba.getModel();
+                linie[7]=drujba.getPret();
+                linie[8]=drujba.getGarantie();
+                linie[9]=drujba.getCategorie();
+                modelTabela.addRow(linie);
+                
+                }
+                    
+            }
+            anFabricatieDrujbaFiltrare.setText("");
+            tipAlimentareDrujbaFiltrare.setText("");
+    }//GEN-LAST:event_sortareButonActionPerformed
+
+    private void salvareFisierDrujbaButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvareFisierDrujbaButonActionPerformed
+        // TODO add your handling code here:
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Sara\\Desktop\\Proiect POO\\Drujba.csv"))) {
+        for (int i = 0; i < lungimeDrujbaList; i++) {
+            Drujba drujba = drujbaList.get(i);
+            writer.write(drujba.afisare());
+            writer.newLine();
+}
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        
+    }//GEN-LAST:event_salvareFisierDrujbaButonActionPerformed
+    public static void eliberareTabel(DefaultTableModel model){
+            model.setRowCount(0);
+    }
+    
+    
+   
     /**
      * @param args the command line arguments
      */
+    
+    public static ArrayList<Trimmer> trimmerList = new ArrayList<>();
+    public static ArrayList<Drujba> drujbaList = new ArrayList<>();
+    public static int lungimeDrujbaList = 0;
+    public static int lungimeTrimmerList = 0;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -456,10 +939,57 @@ public class GUI_Sara extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GUI_Sara.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        
+        // TRIMMER
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sara\\Desktop\\Proiect POO\\Trimmer.csv"))) {
+                  String line;
+                 while ((line = br.readLine()) != null) {
+                
+                        String[] valoare = line.split(",");
+                        
+                        int diametruDeTaiere = Integer.parseInt(valoare[0]);
+                        double greutate = Double.parseDouble(valoare[1]);
+                        int putere = Integer.parseInt(valoare[2]);
+                        String tipMotor = valoare[3];
+                        boolean acumulator = Boolean.parseBoolean(valoare[4]);
+                        String brand = valoare[5];
+                        String model = valoare[6];
+                        float pret = Float.parseFloat(valoare[7]);
+                        byte garantie = Byte.parseByte(valoare[8]);
+                        String categorie = valoare[9];
                 
                 
+                        Trimmer trimmer = new Trimmer(diametruDeTaiere, greutate, putere, tipMotor, acumulator, brand, model,pret,garantie,categorie);
+                        trimmerList.add(trimmer); lungimeTrimmerList++;
+            }} catch (IOException e) {
+            e.printStackTrace();
+            }
+            System.out.println(trimmerList);
+            
+            //DRUJBA
+            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sara\\Desktop\\Proiect POO\\Drujba.csv"))) {
+                  String line;
+                 while ((line = br.readLine()) != null) {
+                
+                        String[] valoare = line.split(",");
+                        
+                        int anFabricatie = Integer.parseInt(valoare[0]);
+                        double putere = Double.parseDouble(valoare[1]);
+                        String modelDrujba = valoare[2];
+                        String culoare = valoare[3];
+                        String tipAlimentare = valoare[4];
+                        String brand = valoare[5];
+                        String modelSimplu = valoare[6];
+                        float pret = Float.parseFloat(valoare[7]);
+                        byte garantie = Byte.parseByte(valoare[8]);
+                        String categorie = valoare[9];
+                
+                
+                        Drujba drujba = new Drujba(anFabricatie, putere, modelDrujba, culoare, tipAlimentare, brand, modelSimplu, pret, garantie, categorie);
+                        drujbaList.add(drujba); lungimeDrujbaList++;
+            }} catch (IOException e) {
+            e.printStackTrace();
+            }
+            System.out.println(drujbaList);
                 
                 
         /* Create and display the form */
@@ -480,30 +1010,41 @@ public class GUI_Sara extends javax.swing.JFrame {
     private javax.swing.JTextField ModelText;
     private javax.swing.JTextField PretText;
     private javax.swing.JTextField PutereText;
-    private javax.swing.JButton SalvareButon;
     private javax.swing.JButton SortareButon;
     private javax.swing.JButton StergereButon;
     private javax.swing.JTextField TipMotorText;
     private javax.swing.JTable TrimmerTabel;
+    private javax.swing.JButton adaugareRandNouDrujbaButon;
+    private javax.swing.JButton adaugareRandNouTrimmerButon;
+    private javax.swing.JButton afisareButon;
+    private javax.swing.JButton afisareDateTabelDrujbaButon;
+    private javax.swing.JTextField anFabricatieDrujbaFiltrare;
+    private javax.swing.JTextField anFabricatieText;
+    private javax.swing.JTextField brandDrujbaText;
+    private javax.swing.JTextField categorieDrujbaText;
+    private javax.swing.JTextField culoareText;
+    private javax.swing.JTable drujbaTabel;
+    private javax.swing.JButton eliberareButon;
+    private javax.swing.JButton eliberareDrujbaButon;
+    private javax.swing.JTextField garantieDrujbaText;
     private javax.swing.JTextField garantieFiltrareText;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField modelDrujbaText;
+    private javax.swing.JTextField modelSimpluText;
+    private javax.swing.JTextField pretDrujbaText;
     private javax.swing.JTextField pretFiltrareText;
+    private javax.swing.JTextField putereDrujbaText;
+    private javax.swing.JButton salvareFisierDrujbaButon;
+    private javax.swing.JButton salvareInFisierButon;
+    private javax.swing.JButton sortareButon;
+    private javax.swing.JButton stergereRandButon;
+    private javax.swing.JTextField tipAlimentareDrujbaFiltrare;
+    private javax.swing.JTextField tipAlimentareDrujbaText;
     // End of variables declaration//GEN-END:variables
 }

@@ -102,6 +102,9 @@ public class Drujba  extends Aparat implements Comportament{
         System.out.println("Drujba este in reparatii");
     }
 
+    public String afisare(){
+    return anFabricatie + "," + putere + "," + modelDrujba + "," + culoare + "," + tipAlimentare + "," + super.getBrand() + "," + super.getModel() + "," + super.getPret() + "," + super.getGarantie() + "," + super.getCategorie();
+    }
 		
 		
 }

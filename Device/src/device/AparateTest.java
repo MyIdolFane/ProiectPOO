@@ -12,9 +12,9 @@ public class AparateTest {
                 //System.out.println(" Afisare myMachineCopy : " + myMachineCopy );
                 //System.out.println(" Afisare hisMachine : " + hisMachine);
                 // motosape 
-                Motosapa myMotosapa = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)4, "Honda", "F560KV", 8533.9f, (byte)4, "Aparat de gradinarit");
-                Motosapa myMotosapaCopy = new Motosapa(myMotosapa);
-                Motosapa yourMotosapa = new Motosapa();
+                //Motosapa myMotosapa = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)4, "Honda", "F560KV", 8533.9f, (byte)4, "Aparat de gradinarit");
+                //Motosapa myMotosapaCopy = new Motosapa(myMotosapa);
+                //Motosapa yourMotosapa = new Motosapa();
                //System.out.println("Afisare motosape : ");
                 //System.out.println(" Afisare myMotosapa :\n " + myMotosapa);
                 //System.out.println(" Afisare myMotosapaCopy :\n " + myMotosapaCopy );
@@ -46,16 +46,16 @@ public class AparateTest {
                 /*for(MasinaTunsIarba item :listaMasiniTunsIarba)
                     System.out.println(item);*/
                 
-                Motosapa motosapaProduceNumber1 = new Motosapa("sfoara", "benzina", 225, (byte)2.9, (byte)4, "Stihl ", "MH 445", 4999.9f, (byte)4, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber2 = new Motosapa("buton", "motorina", 125, (byte)2, (byte)3, "Husqvarna ", "TF 338", 1299.9f, (byte)2, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber3 = new Motosapa("sfoara", "benzina", 250, (byte)3.9, (byte)4, "Bertolini ", "451 S", 2999.9f, (byte)3, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber4 = new Motosapa("buton", "motorina", 300, (byte)5, (byte)5, "McCulloch ", "MFT 44", 2593.9f, (byte)3, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber5 = new Motosapa("sfoara", "motorina", 125, (byte)3.2, (byte)2, "Oleo-Mac", "MH 175", 999.9f, (byte)1, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber6 = new Motosapa("buton", "benzina", 225, (byte)4.5, (byte)3, "Grillo ", "G 85", 1239.9f, (byte)2, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber7 = new Motosapa("sfoara", "benzina", 400, (byte) 4.9, (byte)5, "Echo ", "MTP 850", 3999.9f, (byte)4, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber8 = new Motosapa("sfoara", "motorina", 125, (byte)5, (byte)2, "Kasei ", "KMS 400", 1599.9f, (byte)3, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber9 = new Motosapa("sfoara", "motorina", 225, (byte)4.9, (byte)3, "WOLF-Garten", "A 560", 1499.9f, (byte)3, "Aparat de gradinarit");
-                Motosapa motosapaProduceNumber10 = new Motosapa("sfoara", "benzina", 225, (byte)4, (byte)3, "Honda", "F220", 1299.9f, (byte)2, "Aparat de gradinarit"); 
+                Motosapa motosapaProduceNumber1 = new Motosapa("Stihl ","MH 445","sfoara", "benzina", 225, (byte)2.9, (byte)4,   4999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber2 = new Motosapa("Husqvarna ", "TF 338","buton", "motorina", 125, (byte)2, (byte)3,  1299.9f, (byte)2, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber3 = new Motosapa("Bertolini ", "451 S","sfoara", "benzina", 250, (byte)3.9, (byte)4,  2999.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber4 = new Motosapa("McCulloch ", "MFT 44","buton", "motorina", 300, (byte)5, (byte)5,  2593.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber5 = new Motosapa("Oleo-Mac", "MH 175","sfoara", "motorina", 125, (byte)3.2, (byte)2,  999.9f, (byte)1, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber6 = new Motosapa("Grillo ", "G 85","buton", "benzina", 225, (byte)4.5, (byte)3,  1239.9f, (byte)2, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber7 = new Motosapa("Echo ", "MTP 850","sfoara", "benzina", 400, (byte) 4.9, (byte)5,  3999.9f, (byte)4, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber8 = new Motosapa("Kasei ", "KMS 400","sfoara", "motorina", 125, (byte)5, (byte)2,  1599.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber9 = new Motosapa("WOLF-Garten", "A 560","sfoara", "motorina", 225, (byte)4.9, (byte)3, 1499.9f, (byte)3, "Aparat de gradinarit");
+                Motosapa motosapaProduceNumber10 = new Motosapa("Honda", "F220","sfoara", "benzina", 225, (byte)4, (byte)3,  1299.9f, (byte)2, "Aparat de gradinarit"); 
                 
                 ArrayList<Motosapa> listaMotosape = new ArrayList<>();
                 listaMotosape.add(motosapaProduceNumber1);
@@ -110,14 +110,14 @@ public class AparateTest {
                 //int anFabricatie, double putere, String modelDrujba, String culoare, String tipAlimentare, String brand,String model, float pret, byte garantie, String categorie
                 Drujba numarul1 = new Drujba(2004, 2.3, "Stihl MS 170 ", "albastru", "gaz", "Stihl", "noua", 3000f, (byte) 2, "aparat de taiat lemne" );
                 Drujba numarul2 = new Drujba( 2005, 2.9, " Dolmar PS-6100", "negru", "benzina","Dolmar", "veche", 1679f, (byte) 3, "aparat de taiat lemne" );
-                Drujba numarul3 = new Drujba (2006, 1.8, "Husqvarna 120 Mark II","verde", "motorina","Husqvarna","noua", 2392f, (byte) 1, "aparat de taiat lemne" );
+                Drujba numarul3 = new Drujba (2006, 1.8, "Husqvarna 120 Mark II","verde", "motorina","Husqvarna","veche", 2392f, (byte) 1, "aparat de taiat lemne" );
                 Drujba numarul4 = new Drujba(2007, 2.4, "Makita EA6100P53E ", "galben", "electrică ", "Makita", "noua", 1790f, (byte) 4, "aparat de taiat lemne" );
-                Drujba numarul5 = new Drujba(2008, 2.5, "Echo CS-590 Timber Wolf", "rosu", "pe baterie ", "Echo", "noua", 1990f, (byte) 5, "aparat de taiat lemne" );
-                Drujba numarul6 = new Drujba(2009, 2.6, "Jonsered CS 2245 ", "portocaliu", "hidraulică", "Jonsered", "noua", 2590f, (byte) 6, "aparat de taiat lemne" );
-                Drujba numarul7 = new Drujba(2010, 3.3, "Oleo-Mac GS 451 ", "gri", "pneumatică", "Oleo-Mac", "noua", 1289f, (byte) 1, "aparat de taiat lemne" );
-                Drujba numarul8 = new Drujba(2011, 3.0, "McCulloch CS 450 Elite ", "violet", "bioetanol", "McCulloch", "noua", 2372f, (byte) 3, "aparat de taiat lemne" );
-                Drujba numarul9 = new Drujba(2012, 3.5, "Ryobi RCS5145B ", "mov", "Combustibil sintetic", "Ryobi", "noua", 3278f, (byte) 4, "aparat de taiat lemne" );
-                Drujba numarul10 = new Drujba(2013, 1.3, "Poulan Pro PR4218", "alb", "Combustibil sintetic", "Poulan Pro", "noua", 1590f, (byte) 2, "aparat de taiat lemne" );
+                Drujba numarul5 = new Drujba(2008, 2.5, "Echo CS-590 Timber Wolf", "rosu", "benzina", "Echo", "noua", 1990f, (byte) 5, "aparat de taiat lemne" );
+                Drujba numarul6 = new Drujba(2009, 2.6, "Jonsered CS 2245 ", "portocaliu", "motorina", "Jonsered", "noua", 2590f, (byte) 6, "aparat de taiat lemne" );
+                Drujba numarul7 = new Drujba(2010, 3.3, "Oleo-Mac GS 451 ", "gri", "gaz", "Oleo-Mac", "noua", 1289f, (byte) 1, "aparat de taiat lemne" );
+                Drujba numarul8 = new Drujba(2011, 3.0, "McCulloch CS 450 Elite ", "violet", "benzina", "McCulloch", "noua", 2372f, (byte) 3, "aparat de taiat lemne" );
+                Drujba numarul9 = new Drujba(2012, 3.5, "Ryobi RCS5145B ", "mov", "motorina", "Ryobi", "noua", 3278f, (byte) 4, "aparat de taiat lemne" );
+                Drujba numarul10 = new Drujba(2013, 1.3, "Poulan Pro PR4218", "alb", "gaz", "Poulan Pro", "noua", 1590f, (byte) 2, "aparat de taiat lemne" );
 
                 List<Drujba> drujbaList=new ArrayList<>();
                 drujbaList.add(numarul1);

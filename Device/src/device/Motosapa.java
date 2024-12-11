@@ -11,7 +11,7 @@ public class Motosapa extends Aparat implements Comportament {
         super();
     }
 
-    public Motosapa(String tipPornire, String tipAlimentare, int capacitateCilindrica, byte putereMotor, byte numarViteze, String brand,String model, float pret, byte garantie, String categorie) {
+    public Motosapa(String brand,String model, String tipPornire, String tipAlimentare, int capacitateCilindrica, byte putereMotor, byte numarViteze,  float pret, byte garantie, String categorie) {
         super( brand, model, pret, garantie, categorie);
         this.tipPornire = tipPornire;
         this.tipAlimentare = tipAlimentare;
@@ -83,6 +83,9 @@ public class Motosapa extends Aparat implements Comportament {
     @Override
     public void esteInReparatii() {
         System.out.println("Motosapa este in hambar si trebuie reparata");
+    }//String brand,String model, String tipPornire, String tipAlimentare, int capacitateCilindrica, byte putereMotor, byte numarViteze,  float pret, byte garantie, String categorie
+    public String afisare(){
+    return super.getBrand() + "," + super.getModel() + "," + tipPornire + "," + tipAlimentare + "," + capacitateCilindrica + "," + putereMotor + "," + numarViteze + "," + super.getPret() + "," +super.getGarantie() + "," + super.getCategorie();
     }
     
 }
