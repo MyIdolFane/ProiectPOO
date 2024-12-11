@@ -1,106 +1,130 @@
 package device;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Comparator;
 
-public class InterfatzaGrafica {
-    private List<Aparat> aparate;
+public class InterfatzaGrafica extends JFrame {
+    private JTable table;
+    private DefaultTableModel tableModel;
+    private JComboBox<String> sortComboBox;
+    private JTextField pretMinField, pretMaxField;
+    private JButton filterButton;
+
+    private Aparat[] aparate = {
+            new Aparat("Samsung", "ModelX", 1200.0f, (byte) 2, "Electrocasnice"),
+            new Aparat("LG", "CleanPro", 1500.0f, (byte) 3, "Electrocasnice"),
+            new Aparat("Philips", "DustAway", 900.0f, (byte) 1, "Electrocasnice"),
+            new Aparat("Bosch", "AquaPlus", 1100.0f, (byte) 2, "Electrocasnice"),
+            new Aparat("Dyson", "CycloneV10", 2500.0f, (byte) 5, "Premium")
+    };
 
     public InterfatzaGrafica() {
-        // Inițializare listă de aparate
-        aparate = new ArrayList<>();
-        aparate.add(new Aparat("Samsung", "ModelX", 1200.0f, (byte) 2, "Electrocasnice"));
-        aparate.add(new Aparat("LG", "CleanPro", 1500.0f, (byte) 3, "Electrocasnice"));
-        aparate.add(new Aparat("Philips", "DustAway", 900.0f, (byte) 1, "Electrocasnice"));
-        aparate.add(new Aparat("Bosch", "AquaPlus", 1100.0f, (byte) 2, "Electrocasnice"));
-        aparate.add(new Aparat("Dyson", "CycloneV10", 2500.0f, (byte) 5, "Premium"));
-        aparate.add(new Aparat("Rowenta", "AirForce", 800.0f, (byte) 1, "Electrocasnice"));
+        setTitle("Gestionează Aparate");
+        setSize(600, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Crearea interfeței grafice
-        createGUI();
-    }
+        // Configurare tabel
+        String[] columnNames = {"Brand", "Model", "Preț", "Garanție", "Categorie"};
+        tableModel = new DefaultTableModel(columnNames, 0);
+        table = new JTable(tableModel);
+        JScrollPane scrollPane = new JScrollPane(table);
 
-    private void createGUI() {
-        JFrame frame = new JFrame("Aparate GUI");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
-        frame.setLayout(new BorderLayout());
+        // Adăugare elemente inițiale în tabel
+        for (Aparat aparat : aparate) {
+            tableModel.addRow(new Object[]{aparat.getBrand(), aparat.getModel(), aparat.getPret(), aparat.getGarantie(), aparat.getCategorie()});
+        }
 
-        // Panou pentru introducerea condițiilor
-        JPanel inputPanel = new JPanel();
-        inputPanel.setLayout(new GridLayout(3, 2, 10, 10));
-
-        JLabel pretLabel = new JLabel("Preț maxim:");
-        JTextField pretField = new JTextField();
-        JLabel garantieLabel = new JLabel("Garanție minimă:");
-        JTextField garantieField = new JTextField();
-        JLabel categorieLabel = new JLabel("Categorie:");
-        JTextField categorieField = new JTextField();
-
-        inputPanel.add(pretLabel);
-        inputPanel.add(pretField);
-        inputPanel.add(garantieLabel);
-        inputPanel.add(garantieField);
-        inputPanel.add(categorieLabel);
-        inputPanel.add(categorieField);
-
-        // Zonă pentru afișarea rezultatelor
-        JTextArea resultArea = new JTextArea();
-        resultArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(resultArea);
-
-        // Buton pentru filtrare
-        JButton filterButton = new JButton("Filtrează");
-        filterButton.addActionListener(new ActionListener() {
+        // ComboBox pentru sortare
+        sortComboBox = new JComboBox<>(new String[]{"Sortează după...", "Preț Crescător", "Preț Descrescător"});
+        sortComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Citire condiții din GUI
-                try {
-                    float pretMaxim = Float.parseFloat(pretField.getText());
-                    byte garantieMinima = Byte.parseByte(garantieField.getText());
-                    String categorie = categorieField.getText().trim();
-
-                    // Filtrare și afișare
-                    List<Aparat> filtrate = filtreazaAparate(pretMaxim, garantieMinima, categorie);
-                    resultArea.setText("");
-                    if (filtrate.isEmpty()) {
-                        resultArea.append("Nu s-au găsit aparate care să corespundă criteriilor.\n");
-                    } else {
-                        for (Aparat aparat : filtrate) {
-                            resultArea.append(aparat.toString() + "\n");
-                        }
-                    }
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Vă rugăm să introduceți valori valide pentru preț și garanție.", "Eroare", JOptionPane.ERROR_MESSAGE);
-                }
+                sortTable(sortComboBox.getSelectedIndex());
             }
         });
 
-        // Adăugare componente la frame
-        frame.add(inputPanel, BorderLayout.NORTH);
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(filterButton, BorderLayout.SOUTH);
+        // Câmpuri pentru filtrare
+        pretMinField = new JTextField(5);
+        pretMaxField = new JTextField(5);
+        filterButton = new JButton("Filtrează");
+        filterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filterTable();
+            }
+        });
 
-        frame.setVisible(true);
+        // Panou pentru sortare și filtrare
+        JPanel controlPanel = new JPanel();
+        controlPanel.add(new JLabel("Sortare:"));
+        controlPanel.add(sortComboBox);
+        controlPanel.add(new JLabel("Preț Min:"));
+        controlPanel.add(pretMinField);
+        controlPanel.add(new JLabel("Preț Max:"));
+        controlPanel.add(pretMaxField);
+        controlPanel.add(filterButton);
+
+        // Adăugare componente în fereastră
+        add(scrollPane, BorderLayout.CENTER);
+        add(controlPanel, BorderLayout.SOUTH);
     }
 
-    private List<Aparat> filtreazaAparate(float pretMaxim, byte garantieMinima, String categorie) {
-        List<Aparat> result = new ArrayList<>();
+    // Funcție pentru sortare
+    private void sortTable(int criteria) {
+        Arrays.sort(aparate, new Comparator<Aparat>() {
+            @Override
+            public int compare(Aparat o1, Aparat o2) {
+                if (criteria == 1) { // Preț Crescător
+                    return Float.compare(o1.getPret(), o2.getPret());
+                } else if (criteria == 2) { // Preț Descrescător
+                    return Float.compare(o2.getPret(), o1.getPret());
+                }
+                return 0;
+            }
+        });
+
+        refreshTable();
+    }
+
+    // Funcție pentru filtrare
+    private void filterTable() {
+        float pretMin = 0, pretMax = Float.MAX_VALUE;
+        try {
+            if (!pretMinField.getText().isEmpty()) {
+                pretMin = Float.parseFloat(pretMinField.getText());
+            }
+            if (!pretMaxField.getText().isEmpty()) {
+                pretMax = Float.parseFloat(pretMaxField.getText());
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Introduceți valori numerice valide!", "Eroare", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        tableModel.setRowCount(0);
         for (Aparat aparat : aparate) {
-            if (aparat.getPret() <= pretMaxim &&
-                aparat.getGarantie() >= garantieMinima &&
-                aparat.getCategorie().equalsIgnoreCase(categorie)) {
-                result.add(aparat);
+            if (aparat.getPret() >= pretMin && aparat.getPret() <= pretMax) {
+                tableModel.addRow(new Object[]{aparat.getBrand(), aparat.getModel(), aparat.getPret(), aparat.getGarantie(), aparat.getCategorie()});
             }
         }
-        return result;
+    }
+
+    // Funcție pentru reîncărcare tabel
+    private void refreshTable() {
+        tableModel.setRowCount(0);
+        for (Aparat aparat : aparate) {
+            tableModel.addRow(new Object[]{aparat.getBrand(), aparat.getModel(), aparat.getPret(), aparat.getGarantie(), aparat.getCategorie()});
+        }
     }
 
     public static void main(String[] args) {
-        new InterfatzaGrafica();
+        SwingUtilities.invokeLater(() -> {
+            new InterfatzaGrafica().setVisible(true);
+        });
     }
 }
