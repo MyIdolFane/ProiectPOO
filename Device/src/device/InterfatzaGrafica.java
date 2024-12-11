@@ -4,126 +4,103 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InterfatzaGrafica {
-    private JFrame frame;
-    private JTextField pretMinimField;
-    private JTextField garantieMinimaField;
-    private JTextArea aparateTextArea;
-    private JTextArea aspiratoareUscateTextArea;
-    private JTextArea aspiratoareUmedeTextArea;
-    private JButton filtraButton;
-
-    private Aparat[] aparate;
-    private AspiratorUscat[] aspiratoareUscate;
-    private AspiratorUmed[] aspiratoareUmede;
+    private List<Aparat> aparate;
 
     public InterfatzaGrafica() {
-        initData();
-        initComponents();
+        // Inițializare listă de aparate
+        aparate = new ArrayList<>();
+        aparate.add(new Aparat("Samsung", "ModelX", 1200.0f, (byte) 2, "Electrocasnice"));
+        aparate.add(new Aparat("LG", "CleanPro", 1500.0f, (byte) 3, "Electrocasnice"));
+        aparate.add(new Aparat("Philips", "DustAway", 900.0f, (byte) 1, "Electrocasnice"));
+        aparate.add(new Aparat("Bosch", "AquaPlus", 1100.0f, (byte) 2, "Electrocasnice"));
+        aparate.add(new Aparat("Dyson", "CycloneV10", 2500.0f, (byte) 5, "Premium"));
+        aparate.add(new Aparat("Rowenta", "AirForce", 800.0f, (byte) 1, "Electrocasnice"));
+
+        // Crearea interfeței grafice
+        createGUI();
     }
 
-    private void initData() {
-        aparate = new Aparat[]{
-            new Aparat("Samsung", "ModelX", 1200.0f, (byte) 2, "Electrocasnice"),
-            new Aparat("LG", "CleanPro", 1500.0f, (byte) 3, "Electrocasnice"),
-            new Aparat("Philips", "DustAway", 900.0f, (byte) 1, "Electrocasnice")
-        };
-
-        aspiratoareUscate = new AspiratorUscat[]{
-            new AspiratorUscat("Samsung", "DryClean", 1200.0f, (byte) 2, "AspiratorUscat", (byte) 200, 2.0f, true),
-            new AspiratorUscat("LG", "DustHunter", 1400.0f, (byte) 3, "AspiratorUscat", (byte) 220, 3.5f, false)
-        };
-
-        aspiratoareUmede = new AspiratorUmed[]{
-            new AspiratorUmed("Samsung", "WetClean", 1500.0f, (byte) 3, "AspiratorUmed", (byte) 200, 2.0f, true, true, 2.5f),
-            new AspiratorUmed("LG", "AquaForce", 1600.0f, (byte) 3, "AspiratorUmed", (byte) 220, 3.5f, true, true, 3.0f)
-        };
-    }
-
-    private void initComponents() {
-        frame = new JFrame("Interfață Grafică - Filtrare Dispozitive");
+    private void createGUI() {
+        JFrame frame = new JFrame("Aparate GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
-        frame.setLayout(new GridLayout(4, 1));
+        frame.setSize(600, 400);
+        frame.setLayout(new BorderLayout());
 
-        // Panou pentru filtrare
-        JPanel filterPanel = new JPanel();
-        filterPanel.setLayout(new FlowLayout());
+        // Panou pentru introducerea condițiilor
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new GridLayout(3, 2, 10, 10));
 
-        pretMinimField = new JTextField(5);
-        garantieMinimaField = new JTextField(5);
-        filtraButton = new JButton("Filtrează Dispozitive");
+        JLabel pretLabel = new JLabel("Preț maxim:");
+        JTextField pretField = new JTextField();
+        JLabel garantieLabel = new JLabel("Garanție minimă:");
+        JTextField garantieField = new JTextField();
+        JLabel categorieLabel = new JLabel("Categorie:");
+        JTextField categorieField = new JTextField();
 
-        filterPanel.add(new JLabel("Preț minim:"));
-        filterPanel.add(pretMinimField);
-        filterPanel.add(new JLabel("Garanție minimă:"));
-        filterPanel.add(garantieMinimaField);
-        filterPanel.add(filtraButton);
-        frame.add(filterPanel);
+        inputPanel.add(pretLabel);
+        inputPanel.add(pretField);
+        inputPanel.add(garantieLabel);
+        inputPanel.add(garantieField);
+        inputPanel.add(categorieLabel);
+        inputPanel.add(categorieField);
 
-        // Panou pentru afișarea aparatelor
-        aparateTextArea = new JTextArea(10, 70);
-        aparateTextArea.setEditable(false);
-        frame.add(new JScrollPane(aparateTextArea));
+        // Zonă pentru afișarea rezultatelor
+        JTextArea resultArea = new JTextArea();
+        resultArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(resultArea);
 
-        // Panou pentru afișarea aspiratoarelor uscate
-        aspiratoareUscateTextArea = new JTextArea(10, 70);
-        aspiratoareUscateTextArea.setEditable(false);
-        frame.add(new JScrollPane(aspiratoareUscateTextArea));
-
-        // Panou pentru afișarea aspiratoarelor umede
-        aspiratoareUmedeTextArea = new JTextArea(10, 70);
-        aspiratoareUmedeTextArea.setEditable(false);
-        frame.add(new JScrollPane(aspiratoareUmedeTextArea));
-
-        // Adăugarea ascultătorului pentru butonul de filtrare
-        filtraButton.addActionListener(new ActionListener() {
+        // Buton pentru filtrare
+        JButton filterButton = new JButton("Filtrează");
+        filterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filtraDispozitive();
+                // Citire condiții din GUI
+                try {
+                    float pretMaxim = Float.parseFloat(pretField.getText());
+                    byte garantieMinima = Byte.parseByte(garantieField.getText());
+                    String categorie = categorieField.getText().trim();
+
+                    // Filtrare și afișare
+                    List<Aparat> filtrate = filtreazaAparate(pretMaxim, garantieMinima, categorie);
+                    resultArea.setText("");
+                    if (filtrate.isEmpty()) {
+                        resultArea.append("Nu s-au găsit aparate care să corespundă criteriilor.\n");
+                    } else {
+                        for (Aparat aparat : filtrate) {
+                            resultArea.append(aparat.toString() + "\n");
+                        }
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(frame, "Vă rugăm să introduceți valori valide pentru preț și garanție.", "Eroare", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
+
+        // Adăugare componente la frame
+        frame.add(inputPanel, BorderLayout.NORTH);
+        frame.add(scrollPane, BorderLayout.CENTER);
+        frame.add(filterButton, BorderLayout.SOUTH);
 
         frame.setVisible(true);
     }
 
-    private void filtraDispozitive() {
-        float pretMinim = 0;
-        byte garantieMinima = 0;
-
-        try {
-            pretMinim = Float.parseFloat(pretMinimField.getText());
-            garantieMinima = Byte.parseByte(garantieMinimaField.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(frame, "Introduceți valori numerice valide.");
-            return;
-        }
-
-        aparateTextArea.setText("Aparate care îndeplinesc condițiile:\n");
+    private List<Aparat> filtreazaAparate(float pretMaxim, byte garantieMinima, String categorie) {
+        List<Aparat> result = new ArrayList<>();
         for (Aparat aparat : aparate) {
-            if (aparat.getPret() > pretMinim && aparat.getGarantie() >= garantieMinima) {
-                aparateTextArea.append(aparat + "\n");
+            if (aparat.getPret() <= pretMaxim &&
+                aparat.getGarantie() >= garantieMinima &&
+                aparat.getCategorie().equalsIgnoreCase(categorie)) {
+                result.add(aparat);
             }
         }
-
-        aspiratoareUscateTextArea.setText("Aspiratoare uscate care îndeplinesc condițiile:\n");
-        for (AspiratorUscat aspirator : aspiratoareUscate) {
-            if (aspirator.getPutereAspirare() > 200 && aspirator.isAreFiltruHEPA()) {
-                aspiratoareUscateTextArea.append(aspirator + "\n");
-            }
-        }
-
-        aspiratoareUmedeTextArea.setText("Aspiratoare umede care îndeplinesc condițiile:\n");
-        for (AspiratorUmed aspirator : aspiratoareUmede) {
-            if (aspirator.getCapacitateApa() >= 3 && aspirator.getAreFunctieUscare()) {
-                aspiratoareUmedeTextArea.append(aspirator + "\n");
-            }
-        }
+        return result;
     }
 
     public static void main(String[] args) {
         new InterfatzaGrafica();
     }
 }
-
